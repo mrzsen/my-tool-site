@@ -24,8 +24,8 @@ export default function RegexTesterPage() {
         if (!regExp.global) break;
       }
       setMatches(result);
-    } catch (e) {
-      setError((e as Error).message);
+    } catch (err) {
+      setError((err as Error).message);
     }
   }, [regex, text, flags]);
 
@@ -35,8 +35,8 @@ export default function RegexTesterPage() {
     try {
       const regExp = new RegExp(regex, flags.replace("g", ""));
       setReplaced(text.replace(regExp, replaceText));
-    } catch (e) {
-      setError((e as Error).message);
+    } catch (err2) {
+      setError((err2 as Error).message);
     }
   }, [regex, text, flags, replaceText]);
 
@@ -55,7 +55,7 @@ export default function RegexTesterPage() {
     try {
       await navigator.clipboard.writeText(replaced);
       alert("已复制到剪贴板");
-    } catch {
+    } catch (err3) {
       alert("复制失败");
     }
   }, [replaced]);
@@ -93,9 +93,7 @@ export default function RegexTesterPage() {
               checked={flags.includes("g")}
               onChange={(e) =>
                 setFlags((f) =>
-                  e.target.checked
-                    ? f + "g"
-                    : f.replace("g", "")
+                  e.target.checked ? f + "g" : f.replace("g", "")
                 )
               }
               className="h-4 w-4 text-blue-600 rounded border-gray-300"
@@ -109,9 +107,7 @@ export default function RegexTesterPage() {
               checked={flags.includes("i")}
               onChange={(e) =>
                 setFlags((f) =>
-                  e.target.checked
-                    ? f + "i"
-                    : f.replace("i", "")
+                  e.target.checked ? f + "i" : f.replace("i", "")
                 )
               }
               className="h-4 w-4 text-blue-600 rounded border-gray-300"
@@ -125,9 +121,7 @@ export default function RegexTesterPage() {
               checked={flags.includes("m")}
               onChange={(e) =>
                 setFlags((f) =>
-                  e.target.checked
-                    ? f + "m"
-                    : f.replace("m", "")
+                  e.target.checked ? f + "m" : f.replace("m", "")
                 )
               }
               className="h-4 w-4 text-blue-600 rounded border-gray-300"
@@ -180,7 +174,7 @@ export default function RegexTesterPage() {
                 className="flex justify-between items-center p-2 bg-blue-50 rounded border border-blue-100"
               >
                 <span className="font-mono text-sm text-blue-800">
-                  "{m.match.replace(/"/g, '"')}"
+                  &quot;{m.match}&quot;
                 </span>
                 <span className="text-gray-500 text-xs">位置: {m.index}</span>
               </div>
@@ -234,19 +228,25 @@ export default function RegexTesterPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">\d{{3}}-\d{{4}}-\d{{4}}</code>
+            <code className="text-orange-900">{String.raw`\d{3}-\d{4}-\d{4}`}</code>
             <p className="text-orange-700 text-xs">匹配中国手机号</p>
           </div>
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{{2,}}</code>
+            <code className="text-orange-900">
+              {String.raw`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`}
+            </code>
             <p className="text-orange-700 text-xs">匹配邮箱地址</p>
           </div>
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">https?://[^\s/$.?#].[^\s]*</code>
+            <code className="text-orange-900">
+              {String.raw`^(https?|ftp)://[^\s/$.?#].[^\s]*$`}
+            </code>
             <p className="text-orange-700 text-xs">匹配URL链接</p>
           </div>
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">\b\d{{1,3}}\.\d{{1,3}}\.\d{{1,3}}\.\d{{1,3}}\b</code>
+            <code className="text-orange-900">
+              {String.raw`\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b`}
+            </code>
             <p className="text-orange-700 text-xs">匹配IP地址</p>
           </div>
         </div>

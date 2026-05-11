@@ -17,15 +17,15 @@ export default function RegexTesterPage() {
     if (!regex) return;
     try {
       const regExp = new RegExp(regex, flags);
-      const matches: Array<{ match: string; index: number }> = [];
+      const result: Array<{ match: string; index: number }> = [];
       let match;
       while ((match = regExp.exec(text)) !== null) {
-        matches.push({ match: match[0], index: match.index });
+        result.push({ match: match[0], index: match.index });
         if (!regExp.global) break;
       }
-      setMatches(matches);
-    } catch (e: any) {
-      setError(e.message);
+      setMatches(result);
+    } catch (e) {
+      setError((e as Error).message);
     }
   }, [regex, text, flags]);
 
@@ -35,8 +35,8 @@ export default function RegexTesterPage() {
     try {
       const regExp = new RegExp(regex, flags.replace("g", ""));
       setReplaced(text.replace(regExp, replaceText));
-    } catch (e: any) {
-      setError(e.message);
+    } catch (e) {
+      setError((e as Error).message);
     }
   }, [regex, text, flags, replaceText]);
 
@@ -64,7 +64,7 @@ export default function RegexTesterPage() {
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
-          正则表达式测试器
+          正则表达式测试工具
         </h1>
         <p className="text-gray-600">
           实时测试正则表达式，支持匹配结果查看和替换功能。
@@ -180,7 +180,7 @@ export default function RegexTesterPage() {
                 className="flex justify-between items-center p-2 bg-blue-50 rounded border border-blue-100"
               >
                 <span className="font-mono text-sm text-blue-800">
-                  "{m.match.replace(/"/g, '\\"')}"
+                  "{m.match.replace(/"/g, '"')}"
                 </span>
                 <span className="text-gray-500 text-xs">位置: {m.index}</span>
               </div>
@@ -189,7 +189,6 @@ export default function RegexTesterPage() {
         </div>
       )}
 
-      {/* 替换功能 */}
       <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
         <h2 className="font-semibold text-gray-900 mb-4">替换文本</h2>
         <div className="mb-4">
@@ -235,19 +234,19 @@ export default function RegexTesterPage() {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-2">
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">^\d{{3}}-\d{{4}}-\d{{4}}$</code>
+            <code className="text-orange-900">\d{{3}}-\d{{4}}-\d{{4}}</code>
             <p className="text-orange-700 text-xs">匹配中国手机号</p>
           </div>
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{{2,}}$</code>
+            <code className="text-orange-900">[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{{2,}}</code>
             <p className="text-orange-700 text-xs">匹配邮箱地址</p>
           </div>
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">^(https?|ftp)://[^\s/$.?#].[^\s]*$</code>
+            <code className="text-orange-900">https?://[^\s/$.?#].[^\s]*</code>
             <p className="text-orange-700 text-xs">匹配URL链接</p>
           </div>
           <div className="p-2 bg-orange-100 rounded text-sm">
-            <code className="text-orange-900">\b\w{{1,3}}\.\w{{1,3}}\.\w{{1,3}}\.\w{{1,3}}\b</code>
+            <code className="text-orange-900">\b\d{{1,3}}\.\d{{1,3}}\.\d{{1,3}}\.\d{{1,3}}\b</code>
             <p className="text-orange-700 text-xs">匹配IP地址</p>
           </div>
         </div>

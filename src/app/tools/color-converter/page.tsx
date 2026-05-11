@@ -132,8 +132,8 @@ export default function ColorConverterPage() {
     );
     if (hslMatch) {
       let h = parseInt(hslMatch[1]) % 360;
-      const s = parseInt(hslMatch[2]);
-      const l = parseInt(hslMatch[3]);
+      let s = parseInt(hslMatch[2]);
+      let l = parseInt(hslMatch[3]);
       if (s > 100 || l > 100) {
         setError("HSL 百分比值必须在 0-100 之间");
         setResult(null);

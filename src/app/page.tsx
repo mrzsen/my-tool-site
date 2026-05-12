@@ -229,43 +229,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-white">
-      {/* 顶部导航 */}
-      <nav className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">🛠️</span>
-            <div>
-              <h1 className="text-xl font-bold">在线工具箱</h1>
-              <p className="text-xs text-gray-400">免费 · 高效 · 在线使用</p>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center gap-6">
-            <a href="/" className="text-gray-300 hover:text-white transition">
-              首页
-            </a>
-            <a
-              href="/tools/json-formatter"
-              className="text-gray-300 hover:text-white transition"
-            >
-              工具
-            </a>
-            <a
-              href="/privacy"
-              className="text-gray-300 hover:text-white transition"
-            >
-              隐私政策
-            </a>
-            <a
-              href="/about"
-              className="text-gray-300 hover:text-white transition"
-            >
-              关于
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero 区域 */}
+      /* Hero 区域 */
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iZmxvYXQiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20"></div>
         <div className="relative max-w-4xl mx-auto px-4 py-20 text-center">

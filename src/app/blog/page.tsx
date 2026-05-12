@@ -52,6 +52,38 @@ const posts: Post[] = [
     category: "开发技巧",
     readTime: "6分钟",
   },
+  {
+    slug: "encryption-guide",
+    title: "加密解密工具完全使用指南",
+    excerpt: "详细介绍MD5、SHA、AES等加密解密工具的使用方法和应用场景，帮助您保护数据安全。",
+    date: "2024-01-18",
+    category: "工具教程",
+    readTime: "10分钟",
+  },
+  {
+    slug: "formatting-best-practices",
+    title: "数据格式化最佳实践：JSON、XML、HTML完全指南",
+    excerpt: "掌握JSON、XML、HTML、CSS、JavaScript、SQL等常用数据格式的格式化技巧，让代码更易读。",
+    date: "2024-01-20",
+    category: "开发技巧",
+    readTime: "12分钟",
+  },
+  {
+    slug: "regex-guide",
+    title: "正则表达式入门完全指南：从零开始掌握模式匹配",
+    excerpt: "正则表达式是每个开发者都应该掌握的强大工具。本文从基础语法讲起，带你全面了解正则表达式的使用方法。",
+    date: "2024-01-22",
+    category: "开发技巧",
+    readTime: "15分钟",
+  },
+  {
+    slug: "base64-url-guide",
+    title: "Base64与URL编码详解：原理、应用与最佳实践",
+    excerpt: "Base64和URL编码是Web开发中最常用的编码方式。本文深入浅出地讲解它们的原理和使用场景。",
+    date: "2024-01-25",
+    category: "实用指南",
+    readTime: "10分钟",
+  },
 ];
 
 export default function BlogPage() {

@@ -1,85 +1,152 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const tools = [
   {
+    id: "json-formatter",
+    name: "JSON 格式化",
+    description: "JSON数据格式化、压缩、校验，让数据一目了然。",
+    icon: "📋",
+    href: "/tools/json-formatter",
+    category: "压缩/格式化",
+  },
+  {
+    id: "xml-formatter",
+    name: "XML 格式化",
+    description: "XML数据格式化与压缩，支持代码美化。",
+    icon: "📄",
+    href: "/tools/xml-formatter",
+    category: "压缩/格式化",
+  },
+  {
+    id: "html-formatter",
+    name: "HTML 格式化",
+    description: "HTML代码格式化与压缩，支持HTML5标签。",
+    icon: "🌐",
+    href: "/tools/html-formatter",
+    category: "压缩/格式化",
+  },
+  {
+    id: "css-formatter",
+    name: "CSS 格式化",
+    description: "CSS代码格式化与压缩，支持样式表美化。",
+    icon: "🎨",
+    href: "/tools/css-formatter",
+    category: "压缩/格式化",
+  },
+  {
+    id: "js-formatter",
+    name: "JS 格式化",
+    description: "JavaScript代码格式化与压缩，支持注释移除。",
+    icon: "⚙️",
+    href: "/tools/js-formatter",
+    category: "压缩/格式化",
+  },
+  {
+    id: "sql-formatter",
+    name: "SQL 格式化",
+    description: "SQL语句格式化与压缩，关键字自动换行。",
+    icon: "🗄️",
+    href: "/tools/sql-formatter",
+    category: "压缩/格式化",
+  },
+  {
+    id: "md5-hash",
+    name: "MD5 哈希",
+    description: "计算字符串的MD5哈希值，常用于文件校验。",
+    icon: "🔑",
+    href: "/tools/md5-hash",
+    category: "加密/哈希",
+  },
+  {
+    id: "sha-hash",
+    name: "SHA 哈希",
+    description: "支持SHA-1/256/384/512等多种安全哈希算法。",
+    icon: "🔏",
+    href: "/tools/sha-hash",
+    category: "加密/哈希",
+  },
+  {
+    id: "aes-crypt",
+    name: "AES 加密",
+    description: "AES对称加密解密，支持ECB/CBC模式。",
+    icon: "🔐",
+    href: "/tools/aes-crypt",
+    category: "加密/哈希",
+  },
+  {
+    id: "base64-encode-decode",
+    name: "Base64 编解码",
+    description: "文本Base64编码和解码，支持互转一键复制。",
+    icon: "📡",
+    href: "/tools/base64-encode-decode",
+    category: "编解码转换",
+  },
+  {
+    id: "url-encode-decode",
+    name: "URL 编解码",
+    description: "URL编码和解码，处理特殊字符和中文转码。",
+    icon: "🔗",
+    href: "/tools/url-encode-decode",
+    category: "编解码转换",
+  },
+  {
+    id: "timestamp-converter",
+    name: "时间戳转换",
+    description: "Unix时间戳与日期时间相互转换，支持毫秒级。",
+    icon: "⏰",
+    href: "/tools/timestamp-converter",
+    category: "编解码转换",
+  },
+  {
+    id: "number-converter",
+    name: "进制转换",
+    description: "二进制、八进制、十进制、十六进制之间相互转换。",
+    icon: "🔢",
+    href: "/tools/number-converter",
+    category: "编解码转换",
+  },
+  {
+    id: "case-converter",
+    name: "大小写转换",
+    description: "文本大小写快速转换，支持多种转换模式。",
+    icon: "🔤",
+    href: "/tools/case-converter",
+    category: "编解码转换",
+  },
+  {
+    id: "regex-tester",
+    name: "正则表达式",
+    description: "实时测试正则表达式，支持匹配和替换功能。",
+    icon: "🔍",
+    href: "/tools/regex-tester",
+    category: "文本处理",
+  },
+  {
+    id: "text-processor",
+    name: "文本处理工具箱",
+    description: "文本去重、排序、去空格、大小写转换等多种处理。",
+    icon: "✂️",
+    href: "/tools/text-processor",
+    category: "文本处理",
+  },
+  {
     id: "word-counter",
-    name: "字数统计工具",
-    description: "快速统计文本字数、字符数、段落数，支持中英文混排。",
+    name: "字数统计",
+    description: "实时统计字符数、单词数、段落数等信息。",
     icon: "📝",
     href: "/tools/word-counter",
     category: "文本处理",
   },
   {
-    id: "password-generator",
-    name: "密码生成器",
-    description: "生成安全、随机的强密码，支持自定义长度和字符类型。",
-    icon: "🔐",
-    href: "/tools/password-generator",
-    category: "安全工具",
-  },
-  {
-    id: "qr-generator",
-    name: "二维码生成器",
-    description: "将文本、网址等信息快速转换为二维码图片，支持下载。",
-    icon: "📱",
-    href: "/tools/qr-generator",
+    id: "color-converter",
+    name: "颜色转换器",
+    description: "RGB、HEX、HSL颜色格式之间相互转换。",
+    icon: "🎨",
+    href: "/tools/color-converter",
     category: "实用工具",
-  },
-  {
-    id: "timestamp-converter",
-    name: "时间戳转换器",
-    description: "Unix时间戳与日期时间相互转换，支持毫秒级精度。",
-    icon: "⏰",
-    href: "/tools/timestamp-converter",
-    category: "实用工具",
-  },
-  {
-    id: "json-formatter",
-    name: "JSON格式化",
-    description: "JSON数据格式化、压缩、校验，让数据一目了然。",
-    icon: "📋",
-    href: "/tools/json-formatter",
-    category: "开发工具",
-  },
-  {
-    id: "case-converter",
-    name: "大小写转换",
-    description: "文本大小写快速转换，支持大写、小写、首字母大写等。",
-    icon: "🔤",
-    href: "/tools/case-converter",
-    category: "文本处理",
-  },
-  {
-    id: "base64-encode-decode",
-    name: "Base64编解码",
-    description: "文本Base64编码和解码，支持互转，一键复制结果。",
-    icon: "🔢",
-    href: "/tools/base64-encode-decode",
-    category: "编码转换",
-  },
-  {
-    id: "url-encode-decode",
-    name: "URL编解码",
-    description: "URL编码和解码，处理特殊字符和中文转码。",
-    icon: "🔗",
-    href: "/tools/url-encode-decode",
-    category: "编码转换",
-  },
-  {
-    id: "encrypt-hash",
-    name: "在线加密/哈希",
-    description: "支持MD5、SHA-1、SHA-256等多种哈希算法在线计算。",
-    icon: "🔒",
-    href: "/tools/encrypt-hash",
-    category: "安全工具",
-  },
-  {
-    id: "regex-tester",
-    name: "正则表达式测试器",
-    description: "实时测试正则表达式，支持匹配和替换功能。",
-    icon: "🎯",
-    href: "/tools/regex-tester",
-    category: "开发工具",
   },
   {
     id: "calculator",
@@ -87,212 +154,329 @@ const tools = [
     description: "简洁实用的计算器，支持加减乘除基本运算。",
     icon: "🧮",
     href: "/tools/calculator",
-    category: "计算工具",
-  },
-  {
-    id: "time-difference",
-    name: "时间差计算器",
-    description: "计算两个日期/时间之间的时间差，支持天、时、分、秒。",
-    icon: "⏱️",
-    href: "/tools/time-difference",
     category: "实用工具",
   },
   {
-    id: "color-converter",
-    name: "颜色格式转换器",
-    description: "在HEX、RGB、HSL颜色格式之间相互转换。",
-    icon: "🎨",
-    href: "/tools/color-converter",
-    category: "开发工具",
+    id: "qr-generator",
+    name: "二维码生成",
+    description: "将文本、网址等信息快速转换为二维码图片。",
+    icon: "📱",
+    href: "/tools/qr-generator",
+    category: "实用工具",
   },
   {
-    id: "text-processor",
-    name: "文本处理工具箱",
-    description: "文本去重、排序、去空格、大小写转换等多种文本处理。",
-    icon: "✂️",
-    href: "/tools/text-processor",
-    category: "文本处理",
+    id: "password-generator",
+    name: "密码生成器",
+    description: "生成安全、随机的强密码，支持自定义长度。",
+    icon: "🔒",
+    href: "/tools/password-generator",
+    category: "实用工具",
   },
   {
-    id: "number-converter",
-    name: "进制转换器",
-    description: "二进制、八进制、十进制、十六进制之间相互转换。",
-    icon: "🔄",
-    href: "/tools/number-converter",
-    category: "开发工具",
+    id: "time-difference",
+    name: "时间差计算",
+    description: "计算两个日期/时间之间的时间差，支持天/时/分/秒。",
+    icon: "⏱️",
+    href: "/tools/time-difference",
+    category: "实用工具",
   },
 ];
 
 const categories = [
   { key: "all", name: "全部工具" },
-  { key: "文本处理", name: "文本处理" },
-  { key: "编码转换", name: "编码转换" },
-  { key: "安全工具", name: "安全工具" },
-  { key: "开发工具", name: "开发工具" },
-  { key: "实用工具", name: "实用工具" },
-  { key: "计算工具", name: "计算工具" },
+  { key: "压缩/格式化", name: "📦 压缩/格式化" },
+  { key: "加密/哈希", name: "🔐 加密/哈希" },
+  { key: "编解码转换", name: "🔄 编解码转换" },
+  { key: "文本处理", name: "🔍 文本处理" },
+  { key: "实用工具", name: "🧰 实用工具" },
 ];
 
-export default function Home() {
+function ToolCard({ tool }: { tool: typeof tools[0] }) {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            🔧 在线工具箱
-          </h1>
-          <p className="text-xl md:text-2xl text-blue-100 mb-8">
-            简单、实用、免费 —— 助您提升工作效率
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#tools"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-            >
-              开始使用
+    <Link
+      key={tool.id}
+      href={tool.href}
+      className="block p-5 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-gray-700 hover:bg-gray-900 transition-all hover:shadow-lg hover:shadow-gray-900/50 group"
+    >
+      <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+        {tool.icon}
+      </div>
+      <h3 className="font-semibold text-lg mb-1 group-hover:text-blue-400 transition">
+        {tool.name}
+      </h3>
+      <p className="text-sm text-gray-500">{tool.description}</p>
+    </Link>
+  );
+}
+
+export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const filteredTools = tools.filter(
+    (tool) =>
+      (activeCategory === "all" || tool.category === activeCategory) &&
+      (tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        tool.description.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
+
+  const categoryTools: Record<string, typeof tools> = {};
+  categories.forEach((cat) => {
+    if (cat.key !== "all") {
+      categoryTools[cat.key] = tools.filter((t) => t.category === cat.key);
+    }
+  });
+
+  return (
+    <div className="min-h-screen bg-gray-950 text-white">
+      {/* 顶部导航 */}
+      <nav className="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">🛠️</span>
+            <div>
+              <h1 className="text-xl font-bold">在线工具箱</h1>
+              <p className="text-xs text-gray-400">免费 · 高效 · 在线使用</p>
+            </div>
+          </div>
+          <div className="hidden md:flex items-center gap-6">
+            <a href="/" className="text-gray-300 hover:text-white transition">
+              首页
             </a>
-            <Link
-              href="/blog"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+            <a
+              href="/tools/json-formatter"
+              className="text-gray-300 hover:text-white transition"
             >
-              查看博客
-            </Link>
+              工具
+            </a>
+            <a
+              href="/privacy"
+              className="text-gray-300 hover:text-white transition"
+            >
+              隐私政策
+            </a>
+            <a
+              href="/about"
+              className="text-gray-300 hover:text-white transition"
+            >
+              关于
+            </a>
           </div>
         </div>
-      </section>
+      </nav>
 
-      {/* Statistics */}
-      <section className="bg-white py-8 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="grid grid-cols-3 gap-8">
-            <div>
-              <div className="text-3xl font-bold text-blue-600">{tools.length}</div>
-              <div className="text-gray-500 text-sm mt-1">在线工具</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-green-600">5</div>
-              <div className="text-gray-500 text-sm mt-1">技术文章</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-purple-600">{categories.length - 1}</div>
-              <div className="text-gray-500 text-sm mt-1">工具分类</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Tools Grid */}
-      <section id="tools" className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              精选工具
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              涵盖文本处理、编码转换、安全计算等多种实用工具，无需注册，打开即用
-            </p>
-          </div>
-
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {categories.map((cat) => (
-              <a
-                key={cat.key}
-                href={cat.key === "all" ? "#tools" : `#${cat.key}`}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  cat.key === "all"
-                    ? "bg-blue-600 text-white"
-                    : "bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700"
-                }`}
-              >
-                {cat.name}
-              </a>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tools.map((tool) => (
-              <Link
-                key={tool.id}
-                href={tool.href}
-                id={tool.category}
-                className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 border border-gray-100 group"
-              >
-                <div className="text-4xl mb-4">{tool.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
-                  {tool.name}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {tool.description}
-                </p>
-                <span className="mt-3 inline-block px-2 py-1 bg-gray-100 text-gray-500 text-xs rounded-full">
-                  {tool.category}
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="bg-white py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              为什么选择我们
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-6">
-              <div className="text-5xl mb-4">🚀</div>
-              <h3 className="text-xl font-semibold mb-2">极速响应</h3>
-              <p className="text-gray-600 text-sm">
-                基于最新前端技术构建，页面加载飞快
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="text-5xl mb-4">🔒</div>
-              <h3 className="text-xl font-semibold mb-2">隐私安全</h3>
-              <p className="text-gray-600 text-sm">
-                所有操作在本地完成，数据不会上传服务器
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="text-5xl mb-4">🆓</div>
-              <h3 className="text-xl font-semibold mb-2">完全免费</h3>
-              <p className="text-gray-600 text-sm">
-                所有工具永久免费使用，无需注册登录
-              </p>
-            </div>
-            <div className="text-center p-6">
-              <div className="text-5xl mb-4">📱</div>
-              <h3 className="text-xl font-semibold mb-2">响应式设计</h3>
-              <p className="text-gray-600 text-sm">
-                完美适配手机、平板、电脑等各种设备
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-gray-900 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            开始提升您的工作效率
-          </h2>
-          <p className="text-gray-300 mb-8 text-lg">
-            收藏我们的工具网站，随时使用您需要的在线工具
+      {/* Hero 区域 */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iZmxvYXQiIGZpbGwtb3BhY2l0eT0iMC4xIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIi8+PC9zdmc+')] opacity-20"></div>
+        <div className="relative max-w-4xl mx-auto px-4 py-20 text-center">
+          <h1 className="text-5xl font-bold mb-4">
+            在线工具箱
+            <span className="block text-lg font-normal text-gray-400 mt-2">
+              免费 · 高效 · 即刻使用
+            </span>
+          </h1>
+          <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
+            提供 {tools.length} 款实用在线工具，覆盖编码转换、数据格式化、加密解密、文本处理等场景，无需安装，打开即用
           </p>
-          <a
-            href="#tools"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-          >
-            立即体验
-          </a>
+
+          {/* 搜索框 */}
+          <div className="max-w-xl mx-auto">
+            <div className="relative">
+              <svg
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                placeholder="搜索工具，如「JSON」「加密」..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-4 py-4 rounded-xl bg-gray-800 text-white placeholder-gray-500 border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition"
+              />
+            </div>
+          </div>
+
+          {/* 统计数字 */}
+          <div className="flex justify-center gap-8 mt-10">
+            <div className="text-center">
+              <div className="text-3xl font-bold text-blue-400">
+                {tools.length}
+              </div>
+              <div className="text-sm text-gray-500">在线工具</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-green-400">
+                {categories.length - 1}
+              </div>
+              <div className="text-sm text-gray-500">分类数量</div>
+            </div>
+            <div className="text-center">
+              <div className="text-3xl font-bold text-purple-400">5</div>
+              <div className="text-sm text-gray-500">博客文章</div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* 工具分类列表 */}
+      <main className="max-w-7xl mx-auto px-4 py-16">
+        {searchQuery && (
+          <p className="text-gray-400 mb-6">
+            搜索「<span className="text-blue-400">{searchQuery}</span>」找到{" "}
+            <span className="text-green-400 font-bold">
+              {filteredTools.length}
+            </span>{" "}
+            个工具
+          </p>
+        )}
+
+        {/* 分类标签 */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {categories.map((cat) => (
+            <button
+              key={cat.key}
+              onClick={() => setActiveCategory(cat.key)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === cat.key
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </div>
+
+        {/* 按分类显示工具 */}
+        {activeCategory === "all" ? (
+          <div className="space-y-16">
+            {[
+              {
+                cat: "压缩/格式化",
+                color: "from-purple-500 to-pink-500",
+                tools: tools.filter((t) => t.category === "压缩/格式化"),
+              },
+              {
+                cat: "加密/哈希",
+                color: "from-red-500 to-orange-500",
+                tools: tools.filter((t) => t.category === "加密/哈希"),
+              },
+              {
+                cat: "编解码转换",
+                color: "from-blue-500 to-cyan-500",
+                tools: tools.filter((t) => t.category === "编解码转换"),
+              },
+              {
+                cat: "文本处理",
+                color: "from-green-500 to-emerald-500",
+                tools: tools.filter((t) => t.category === "文本处理"),
+              },
+              {
+                cat: "实用工具",
+                color: "from-yellow-500 to-orange-500",
+                tools: tools.filter((t) => t.category === "实用工具"),
+              },
+            ].map(
+              ({ cat, color, tools: catTools }) =>
+                catTools.length > 0 && (
+                  <section key={cat}>
+                    <h2
+                      className={`text-2xl font-bold mb-6 bg-gradient-to-r ${color} bg-clip-text text-transparent`}
+                    >
+                      {cat}
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                      {catTools.map((tool) => (
+                        <ToolCard key={tool.id} tool={tool} />
+                      ))}
+                    </div>
+                  </section>
+                )
+            )}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {filteredTools.length > 0 ? (
+              filteredTools.map((tool) => <ToolCard key={tool.id} tool={tool} />)
+            ) : (
+              <p className="text-gray-500 text-center col-span-full py-10">
+                没有找到匹配的工具
+              </p>
+            )}
+          </div>
+        )}
+      </main>
+
+      {/* 页脚 */}
+      <footer className="border-t border-gray-800 bg-gray-950">
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h4 className="font-semibold mb-3 flex items-center gap-2">
+                <span className="text-2xl">🛠️</span> 在线工具箱
+              </h4>
+              <p className="text-gray-500 text-sm">
+                提供免费的在线工具集合，覆盖日常开发、数据处理、文本编辑等多种场景。
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">快速链接</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <a
+                    href="/tools/json-formatter"
+                    className="hover:text-blue-400 transition"
+                  >
+                    → 所有工具
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/privacy"
+                    className="hover:text-blue-400 transition"
+                  >
+                    → 隐私政策
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/about"
+                    className="hover:text-blue-400 transition"
+                  >
+                    → 关于我们
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">工具分类</h4>
+              <ul className="space-y-2 text-sm text-gray-400">
+                {categories
+                  .filter((c) => c.key !== "all")
+                  .map((cat) => (
+                    <li key={cat.key}>
+                      <a href={`#${cat.key}`} className="hover:text-blue-400 transition">
+                        {cat.name}
+                      </a>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-4 text-center text-xs text-gray-600">
+            <p>© 2025 在线工具箱 · 免费使用 · 支持开发者通过广告获得收入</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

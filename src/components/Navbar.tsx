@@ -9,9 +9,14 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl">🛠️</span>
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="#2563EB"/>
+                <path d="M10 16H22" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                <path d="M14 12L10 16L14 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 12L22 16L18 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
               <div>
-                <span className="text-lg font-bold text-white">在线工具箱</span>
+                <span className="text-xl font-bold text-white">在线工具箱</span>
               </div>
             </Link>
           </div>

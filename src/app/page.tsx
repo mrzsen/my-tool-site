@@ -379,68 +379,6 @@ export default function Home() {
           </div>
         )}
       </main>
-
-      {/* 页脚 */}
-      <footer className="border-t border-gray-800 bg-gray-950">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="font-semibold mb-3 flex items-center gap-2">
-                <span className="text-2xl">🛠️</span> 在线工具箱
-              </h4>
-              <p className="text-gray-500 text-sm">
-                提供免费的在线工具集合，覆盖日常开发、数据处理、文本编辑等多种场景。
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">快速链接</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <a
-                    href="/tools/json-formatter"
-                    className="hover:text-blue-400 transition"
-                  >
-                    → 所有工具
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/privacy"
-                    className="hover:text-blue-400 transition"
-                  >
-                    → 隐私政策
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/about"
-                    className="hover:text-blue-400 transition"
-                  >
-                    → 关于我们
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-3">工具分类</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
-                {categories
-                  .filter((c) => c.key !== "all")
-                  .map((cat) => (
-                    <li key={cat.key}>
-                      <a href={`#${cat.key}`} className="hover:text-blue-400 transition">
-                        {cat.name}
-                      </a>
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-4 text-center text-xs text-gray-600">
-            <p>© 2025 在线工具箱 · 免费使用 · 支持开发者通过广告获得收入</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

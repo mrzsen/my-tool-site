@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "颜色转换工具 | 在线工具箱",
+  description: "在线颜色格式转换工具，支持RGB、HEX、HSL等多种格式互转。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/color-converter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 const PRESET_COLORS: { name: string; hex: string }[] = [

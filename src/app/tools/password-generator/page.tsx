@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "密码生成器 | 在线工具箱",
+  description: "在线安全密码生成器，可自定义长度和字符类型，生成高强度随机密码。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/password-generator"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function PasswordGeneratorPage() {

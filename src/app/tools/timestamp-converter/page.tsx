@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "时间戳转换工具 | 在线工具箱",
+  description: "在线Unix时间戳转换工具，支持时间戳与日期时间相互转换。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/timestamp-converter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function TimestampConverterPage() {

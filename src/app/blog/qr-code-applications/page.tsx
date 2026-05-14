@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "二维码的 10 种创意应用场景 | 博客 - 在线工具箱",
+  description: "探索二维码在营销、教育、物流等领域的创意应用。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/blog/qr-code-applications"
+  }
+};
+
 import Link from "next/link";
 
 export default function BlogPost() {

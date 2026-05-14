@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "如何使用字数统计工具 | 博客 - 在线工具箱",
+  description: "详细介绍如何充分利用字数统计工具提升写作效率。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/blog/how-to-use-word-counter"
+  }
+};
+
 import Link from "next/link";
 
 export default function BlogPost() {

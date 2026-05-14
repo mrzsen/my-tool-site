@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "SQL 格式化工具 | 在线工具箱",
+  description: "在线SQL语句格式化工具，支持SQL美化和压缩。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/sql-formatter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function SqlFormatterPage() {
@@ -125,7 +135,7 @@ export default function SqlFormatterPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="SELECT * FROM users WHERE id = 1"
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
           />
         </div>
         <div>
@@ -136,7 +146,7 @@ export default function SqlFormatterPage() {
             value={output}
             readOnly
             placeholder="结果将在这里显示..."
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize font-mono text-sm"
           />
         </div>
       </div>

@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "大小写转换工具 | 在线工具箱",
+  description: "在线文本大小写转换工具，支持驼峰、下划线等多种格式。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/case-converter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 type CaseType = "upper" | "lower" | "title" | "camel" | "kebab" | "snake";
@@ -78,7 +88,7 @@ export default function CaseConverterPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="在此输入文本..."
-          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 

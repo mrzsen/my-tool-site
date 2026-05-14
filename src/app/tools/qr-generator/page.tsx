@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "二维码生成器 | 在线工具箱",
+  description: "在线二维码生成工具，支持文本、网址等多种内容，可自定义尺寸并下载。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/qr-generator"
+  }
+};
+
 import { useState, useCallback, useRef } from "react";
 
 export default function QRGeneratorPage() {
@@ -44,7 +54,7 @@ export default function QRGeneratorPage() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="输入文本或网址..."
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none h-24"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize h-24"
           />
         </div>
 

@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Base64 编解码工具 | 在线工具箱",
+  description: "在线Base64编码解码工具，支持文本内容的快速转换。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/base64-encode-decode"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function Base64Page() {
@@ -94,7 +104,7 @@ export default function Base64Page() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={mode === "encode" ? "在此输入要编码的文本..." : "在此输入Base64字符串..."}
-          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
 
         <div className="flex gap-2 mt-4">

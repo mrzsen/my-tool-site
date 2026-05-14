@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "文本处理工具箱 | 在线工具箱",
+  description: "在线文本处理工具，支持去重、排序、去空格、大小写转换等多种功能。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/text-processor"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function TextProcessorPage() {
@@ -165,7 +175,7 @@ export default function TextProcessorPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="在此输入要处理的文本..."
-          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm mb-4"
+          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm mb-4"
         />
 
         {/* 操作按钮 */}

@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "深入理解 Unix 时间戳 | 博客 - 在线工具箱",
+  description: "深入讲解Unix时间戳的原理、应用场景以及常见转换方法。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/blog/understanding-unix-timestamp"
+  }
+};
+
 import Link from "next/link";
 
 export default function BlogPost() {

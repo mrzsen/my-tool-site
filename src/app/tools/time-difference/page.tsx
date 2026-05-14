@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "时间差计算器 | 在线工具箱",
+  description: "在线时间差计算工具，计算两个日期时间之间的天数、小时、分钟、秒数。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/time-difference"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function TimeDifferencePage() {

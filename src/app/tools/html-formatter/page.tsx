@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "HTML 格式化工具 | 在线工具箱",
+  description: "在线HTML代码格式化工具，支持HTML5标签美化、压缩。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/html-formatter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 const VOID_ELEMENTS = [
@@ -117,7 +127,7 @@ export default function HtmlFormatterPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="<html><body><h1>Hello</h1></body></html>"
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
           />
         </div>
         <div>
@@ -128,7 +138,7 @@ export default function HtmlFormatterPage() {
             value={output}
             readOnly
             placeholder="结果将在这里显示..."
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize font-mono text-sm"
           />
         </div>
       </div>

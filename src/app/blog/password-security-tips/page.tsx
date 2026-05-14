@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "密码安全完全指南 | 博客 - 在线工具箱",
+  description: "分享如何创建强密码、管理密码以及保护在线账户安全的最佳实践。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/blog/password-security-tips"
+  }
+};
+
 import Link from "next/link";
 
 export default function BlogPost() {

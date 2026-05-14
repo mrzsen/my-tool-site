@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "在线计算器 | 在线工具箱",
+  description: "简洁实用的在线计算器，支持加减乘除基本数学运算。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/calculator"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function CalculatorPage() {

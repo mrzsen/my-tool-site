@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "正则表达式测试工具 | 在线工具箱",
+  description: "在线正则表达式实时测试工具，支持匹配查找和替换功能。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/regex-tester"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function RegexTesterPage() {
@@ -137,7 +147,7 @@ export default function RegexTesterPage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="在此输入要匹配的文本..."
-          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
 
         <div className="flex gap-2 mt-4">

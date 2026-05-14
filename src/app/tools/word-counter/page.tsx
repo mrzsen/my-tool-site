@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "字数统计工具 | 在线工具箱",
+  description: "在线字数统计工具，实时统计字符数、词数、行数、段落数，支持中英文混排。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/word-counter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function WordCounterPage() {
@@ -70,7 +80,7 @@ export default function WordCounterPage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="在此输入或粘贴文本..."
-          className="w-full h-64 p-4 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-64 p-4 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
       </div>
 

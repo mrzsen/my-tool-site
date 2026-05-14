@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "JSON 格式化最佳实践 | 博客 - 在线工具箱",
+  description: "介绍JSON格式化的最佳实践，包括缩进、校验和常见错误处理。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/blog/json-formatting-best-practices"
+  }
+};
+
 import Link from "next/link";
 
 export default function BlogPost() {

@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "URL 编解码工具 | 在线工具箱",
+  description: "在线URL编码解码工具，支持UTF-8中文编码转换。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/url-encode-decode"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 export default function UrlEncodeDecodePage() {
@@ -94,7 +104,7 @@ export default function UrlEncodeDecodePage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={mode === "encode" ? "在此输入要编码的URL..." : "在此输入要解码的URL编码字符串..."}
-          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
 
         <div className="flex gap-2 mt-4">

@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AES 加密解密工具 | 在线工具箱",
+  description: "在线AES对称加密解密工具，支持ECB和CBC模式，128/192/256位密钥。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/aes-crypt"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 const MODES = ["ECB", "CBC"] as const;
@@ -133,7 +143,7 @@ export default function AesCryptPage() {
                   ? "输入要加密的文本..."
                   : "输入要解密的密文..."
               }
-              className="w-full h-64 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+              className="w-full h-64 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
             />
           </div>
           <div>
@@ -144,7 +154,7 @@ export default function AesCryptPage() {
               value={output}
               readOnly
               placeholder="结果将在这里显示..."
-              className="w-full h-64 p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none font-mono text-sm"
+              className="w-full h-64 p-3 border border-gray-300 rounded-lg bg-gray-50 resize font-mono text-sm"
             />
           </div>
         </div>

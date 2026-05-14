@@ -1,5 +1,15 @@
 "use client";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "进制转换工具 | 在线工具箱",
+  description: "在线进制转换工具，支持二进制、八进制、十进制、十六进制互转。",
+  alternates: {
+    canonical: "https://tool.wnsj.net/tools/number-converter"
+  }
+};
+
 import { useState, useCallback } from "react";
 
 const BASES = ["二进制 (2)", "八进制 (8)", "十进制 (10)", "十六进制 (16)"] as const;

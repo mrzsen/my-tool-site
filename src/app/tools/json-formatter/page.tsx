@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "JSON 格式化工具 | 在线工具箱",
-  description: "在线JSON格式化、压缩、校验工具，支持带注释JSON、键排序、树形视图、路径查询、转义等。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/json-formatter"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback, useRef, useEffect } from "react";
 
 function stripJsonComments(json: string): string {
@@ -72,6 +63,12 @@ function TreeNode({ data, level = 0 }: TreeNodeProps) {
         ? "text-purple-600"
         : "text-gray-400";
     return (
+      <Head>
+        <title>JSON 格式化工具</title>
+        <meta name="description" content="在线JSON格式化、压缩、校验工具，支持带注释JSON、键排序、树形视图、路径查询、转义等。" />
+        <link rel="canonical" href="https://tool.wnsj.net/tools/json-formatter" />
+      </Head>
+
       <span className={color}>
         {typeof data === "string" ? `"${data}"` : String(data)}
       </span>

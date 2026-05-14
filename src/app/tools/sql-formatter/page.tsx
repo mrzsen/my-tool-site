@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "SQL 格式化工具 | 在线工具箱",
-  description: "在线SQL语句格式化工具，支持SQL美化和压缩。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/sql-formatter"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function SqlFormatterPage() {
@@ -116,6 +107,12 @@ export default function SqlFormatterPage() {
   }, []);
 
   return (
+    <Head>
+      <title>SQL 格式化工具</title>
+      <meta name="description" content="在线SQL语句格式化工具，支持SQL美化和压缩。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/sql-formatter" />
+    </Head>
+
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

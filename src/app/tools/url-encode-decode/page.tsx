@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "URL 编解码工具 | 在线工具箱",
-  description: "在线URL编码解码工具，支持UTF-8中文编码转换。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/url-encode-decode"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function UrlEncodeDecodePage() {
@@ -49,6 +40,12 @@ export default function UrlEncodeDecodePage() {
   }, [output]);
 
   return (
+    <Head>
+      <title>URL 编解码工具</title>
+      <meta name="description" content="在线URL编码解码工具，支持UTF-8中文编码转换。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/url-encode-decode" />
+    </Head>
+
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

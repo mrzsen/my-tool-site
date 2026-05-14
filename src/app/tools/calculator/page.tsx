@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "在线计算器 | 在线工具箱",
-  description: "简洁实用的在线计算器，支持加减乘除基本数学运算。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/calculator"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function CalculatorPage() {
@@ -75,6 +66,12 @@ export default function CalculatorPage() {
   }, []);
 
   return (
+    <Head>
+      <title>在线计算器</title>
+      <meta name="description" content="简洁实用的在线计算器，支持加减乘除基本数学运算。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/calculator" />
+    </Head>
+
     <div className="max-w-md mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

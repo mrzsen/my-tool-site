@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "文本处理工具箱 | 在线工具箱",
-  description: "在线文本处理工具，支持去重、排序、去空格、大小写转换等多种功能。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/text-processor"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function TextProcessorPage() {
@@ -127,6 +118,12 @@ export default function TextProcessorPage() {
   const currentMode = modes.find((m) => m.key === mode);
 
   return (
+    <Head>
+      <title>文本处理工具箱</title>
+      <meta name="description" content="在线文本处理工具，支持去重、排序、去空格、大小写转换等多种功能。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/text-processor" />
+    </Head>
+
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

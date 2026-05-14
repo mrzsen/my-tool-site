@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "密码生成器 | 在线工具箱",
-  description: "在线安全密码生成器，可自定义长度和字符类型，生成高强度随机密码。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/password-generator"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function PasswordGeneratorPage() {
@@ -60,6 +51,12 @@ export default function PasswordGeneratorPage() {
   const strength = getStrength(password);
 
   return (
+    <Head>
+      <title>密码生成器</title>
+      <meta name="description" content="在线安全密码生成器，可自定义长度和字符类型，生成高强度随机密码。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/password-generator" />
+    </Head>
+
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">密码生成器</h1>

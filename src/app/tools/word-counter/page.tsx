@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "字数统计工具 | 在线工具箱",
-  description: "在线字数统计工具，实时统计字符数、词数、行数、段落数，支持中英文混排。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/word-counter"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function WordCounterPage() {
@@ -46,6 +37,12 @@ export default function WordCounterPage() {
   }, [text]);
 
   return (
+    <Head>
+      <title>字数统计工具</title>
+      <meta name="description" content="在线字数统计工具，实时统计字符数、词数、行数、段落数，支持中英文混排。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/word-counter" />
+    </Head>
+
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">字数统计工具</h1>

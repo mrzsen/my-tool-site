@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "HTML 格式化工具 | 在线工具箱",
-  description: "在线HTML代码格式化工具，支持HTML5标签美化、压缩。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/html-formatter"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const VOID_ELEMENTS = [
@@ -108,6 +99,12 @@ export default function HtmlFormatterPage() {
   }, []);
 
   return (
+    <Head>
+      <title>HTML 格式化工具</title>
+      <meta name="description" content="在线HTML代码格式化工具，支持HTML5标签美化、压缩。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/html-formatter" />
+    </Head>
+
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

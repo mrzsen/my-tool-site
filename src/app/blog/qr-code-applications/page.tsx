@@ -1,19 +1,16 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "二维码的 10 种创意应用场景 | 博客 - 在线工具箱",
-  description: "探索二维码在营销、教育、物流等领域的创意应用。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/blog/qr-code-applications"
-  }
-};
-
+import Head from "next/head";
 import Link from "next/link";
 
 export default function BlogPost() {
   return (
+    <Head>
+      <title>二维码的 10 种创意应用场景</title>
+      <meta name="description" content="探索二维码在营销、教育、物流等领域的创意应用。" />
+      <link rel="canonical" href="https://tool.wnsj.net/blog/qr-code-applications" />
+    </Head>
+
     <div className="max-w-3xl mx-auto px-4 py-8">
       <article className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
         <header className="mb-8">

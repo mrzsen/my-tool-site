@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "AES 加密解密工具 | 在线工具箱",
-  description: "在线AES对称加密解密工具，支持ECB和CBC模式，128/192/256位密钥。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/aes-crypt"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const MODES = ["ECB", "CBC"] as const;
@@ -119,6 +110,12 @@ export default function AesCryptPage() {
   }, [input, key, mode, action]);
 
   return (
+    <Head>
+      <title>AES 加密解密工具</title>
+      <meta name="description" content="在线AES对称加密解密工具，支持ECB和CBC模式，128/192/256位密钥。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/aes-crypt" />
+    </Head>
+
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

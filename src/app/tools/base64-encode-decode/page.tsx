@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Base64 编解码工具 | 在线工具箱",
-  description: "在线Base64编码解码工具，支持文本内容的快速转换。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/base64-encode-decode"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function Base64Page() {
@@ -49,6 +40,12 @@ export default function Base64Page() {
   }, [output]);
 
   return (
+    <Head>
+      <title>Base64 编解码工具</title>
+      <meta name="description" content="在线Base64编码解码工具，支持文本内容的快速转换。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/base64-encode-decode" />
+    </Head>
+
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

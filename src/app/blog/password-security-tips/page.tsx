@@ -1,19 +1,16 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "密码安全完全指南 | 博客 - 在线工具箱",
-  description: "分享如何创建强密码、管理密码以及保护在线账户安全的最佳实践。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/blog/password-security-tips"
-  }
-};
-
+import Head from "next/head";
 import Link from "next/link";
 
 export default function BlogPost() {
   return (
+    <Head>
+      <title>密码安全完全指南</title>
+      <meta name="description" content="分享如何创建强密码、管理密码以及保护在线账户安全的最佳实践。" />
+      <link rel="canonical" href="https://tool.wnsj.net/blog/password-security-tips" />
+    </Head>
+
     <div className="max-w-3xl mx-auto px-4 py-8">
       <article className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
         <header className="mb-8">

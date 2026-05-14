@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "加密哈希工具(MD5/SHA) | 在线工具箱",
-  description: "支持MD5、SHA-1、SHA-256、SHA-384、SHA-512等多种哈希算法在线计算。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/encrypt-hash"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const hashAlgorithms = ["MD5", "SHA-1", "SHA-256", "SHA-384", "SHA-512"];
@@ -65,6 +56,12 @@ export default function EncryptHashPage() {
   }, [result]);
 
   return (
+    <Head>
+      <title>加密哈希工具(MD5/SHA)</title>
+      <meta name="description" content="支持MD5、SHA-1、SHA-256、SHA-384、SHA-512等多种哈希算法在线计算。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/encrypt-hash" />
+    </Head>
+
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

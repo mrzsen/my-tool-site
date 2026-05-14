@@ -1,15 +1,6 @@
 "use client";
 
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "JS 格式化工具 | 在线工具箱",
-  description: "在线JavaScript代码格式化工具，支持代码压缩和注释移除。",
-  alternates: {
-    canonical: "https://tool.wnsj.net/tools/js-formatter"
-  }
-};
-
+import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function JsFormatterPage() {
@@ -85,6 +76,12 @@ export default function JsFormatterPage() {
   }, []);
 
   return (
+    <Head>
+      <title>JS 格式化工具</title>
+      <meta name="description" content="在线JavaScript代码格式化工具，支持代码压缩和注释移除。" />
+      <link rel="canonical" href="https://tool.wnsj.net/tools/js-formatter" />
+    </Head>
+
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

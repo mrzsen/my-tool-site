@@ -127,12 +127,12 @@ export default function JsonFormatterPage() {
               清空
             </button>
           </div>
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder='{"key": "value"}'
-            className="w-full h-96 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
-          />
+<textarea
+             value={input}
+             onChange={(e) => setInput(e.target.value)}
+             placeholder='{"key": "value"}'
+             className="w-full min-h-48 max-h-[60vh] p-3 border border-gray-300 rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm overflow-auto"
+           />
         </div>
 
         {/* Output */}
@@ -147,12 +147,12 @@ export default function JsonFormatterPage() {
               复制
             </button>
           </div>
-          <textarea
-            value={output}
-            readOnly
-            placeholder="格式化后的JSON..."
-            className="w-full h-96 p-3 border border-gray-300 rounded-lg resize-none bg-gray-50 font-mono text-sm"
-          />
+<textarea
+             value={output}
+             readOnly
+             placeholder="格式化后的JSON..."
+             className="w-full min-h-48 max-h-[60vh] p-3 border border-gray-300 rounded-lg resize-y bg-gray-50 font-mono text-sm overflow-auto"
+           />
         </div>
       </div>
 

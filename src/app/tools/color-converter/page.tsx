@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const PRESET_COLORS: { name: string; hex: string }[] = [
@@ -215,12 +214,6 @@ export default function ColorConverterPage() {
   })();
 
   return (
-    <Head>
-      <title>颜色转换工具</title>
-      <meta name="description" content="在线颜色格式转换工具，支持RGB、HEX、HSL等多种格式互转。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/color-converter" />
-    </Head>
-
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

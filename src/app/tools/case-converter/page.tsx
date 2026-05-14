@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 type CaseType = "upper" | "lower" | "title" | "camel" | "kebab" | "snake";
@@ -65,12 +64,6 @@ export default function CaseConverterPage() {
   }, [output]);
 
   return (
-    <Head>
-      <title>大小写转换工具</title>
-      <meta name="description" content="在线文本大小写转换工具，支持驼峰、下划线等多种格式。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/case-converter" />
-    </Head>
-
     <div className="max-w-3xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">大小写转换</h1>
@@ -85,7 +78,7 @@ export default function CaseConverterPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="在此输入文本..."
-          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 

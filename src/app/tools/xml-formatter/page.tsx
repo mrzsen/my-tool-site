@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function XmlFormatterPage() {
@@ -79,12 +78,6 @@ export default function XmlFormatterPage() {
   }, []);
 
   return (
-    <Head>
-      <title>XML 格式化工具</title>
-      <meta name="description" content="在线XML格式化美化工具，支持XML代码压缩和缩进调整。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/xml-formatter" />
-    </Head>
-
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -104,7 +97,7 @@ export default function XmlFormatterPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="<root><item>test</item></root>"
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
           />
         </div>
         <div>
@@ -115,7 +108,7 @@ export default function XmlFormatterPage() {
             value={output}
             readOnly
             placeholder="结果将在这里显示..."
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none font-mono text-sm"
           />
         </div>
       </div>

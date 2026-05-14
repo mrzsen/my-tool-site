@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback, useRef } from "react";
 
 export default function QRGeneratorPage() {
@@ -30,12 +29,6 @@ export default function QRGeneratorPage() {
   }, [qrUrl]);
 
   return (
-    <Head>
-      <title>二维码生成器</title>
-      <meta name="description" content="在线二维码生成工具，支持文本、网址等多种内容，可自定义尺寸并下载。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/qr-generator" />
-    </Head>
-
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">二维码生成器</h1>
@@ -51,7 +44,7 @@ export default function QRGeneratorPage() {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="输入文本或网址..."
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize h-24"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none h-24"
           />
         </div>
 

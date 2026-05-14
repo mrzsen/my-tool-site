@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function UrlEncodeDecodePage() {
@@ -40,12 +39,6 @@ export default function UrlEncodeDecodePage() {
   }, [output]);
 
   return (
-    <Head>
-      <title>URL 编解码工具</title>
-      <meta name="description" content="在线URL编码解码工具，支持UTF-8中文编码转换。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/url-encode-decode" />
-    </Head>
-
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -101,7 +94,7 @@ export default function UrlEncodeDecodePage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={mode === "encode" ? "在此输入要编码的URL..." : "在此输入要解码的URL编码字符串..."}
-          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
 
         <div className="flex gap-2 mt-4">

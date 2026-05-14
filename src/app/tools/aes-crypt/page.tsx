@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const MODES = ["ECB", "CBC"] as const;
@@ -110,12 +109,6 @@ export default function AesCryptPage() {
   }, [input, key, mode, action]);
 
   return (
-    <Head>
-      <title>AES 加密解密工具</title>
-      <meta name="description" content="在线AES对称加密解密工具，支持ECB和CBC模式，128/192/256位密钥。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/aes-crypt" />
-    </Head>
-
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -140,7 +133,7 @@ export default function AesCryptPage() {
                   ? "输入要加密的文本..."
                   : "输入要解密的密文..."
               }
-              className="w-full h-64 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+              className="w-full h-64 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
             />
           </div>
           <div>
@@ -151,7 +144,7 @@ export default function AesCryptPage() {
               value={output}
               readOnly
               placeholder="结果将在这里显示..."
-              className="w-full h-64 p-3 border border-gray-300 rounded-lg bg-gray-50 resize font-mono text-sm"
+              className="w-full h-64 p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none font-mono text-sm"
             />
           </div>
         </div>

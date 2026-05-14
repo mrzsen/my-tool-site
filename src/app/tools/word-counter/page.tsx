@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function WordCounterPage() {
@@ -37,12 +36,6 @@ export default function WordCounterPage() {
   }, [text]);
 
   return (
-    <Head>
-      <title>字数统计工具</title>
-      <meta name="description" content="在线字数统计工具，实时统计字符数、词数、行数、段落数，支持中英文混排。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/word-counter" />
-    </Head>
-
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">字数统计工具</h1>
@@ -77,7 +70,7 @@ export default function WordCounterPage() {
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="在此输入或粘贴文本..."
-          className="w-full h-64 p-4 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-64 p-4 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
       </div>
 

@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const BASES = ["二进制 (2)", "八进制 (8)", "十进制 (10)", "十六进制 (16)"] as const;
@@ -99,12 +98,6 @@ export default function NumberConverterPage() {
   }, []);
 
   return (
-    <Head>
-      <title>进制转换工具</title>
-      <meta name="description" content="在线进制转换工具，支持二进制、八进制、十进制、十六进制互转。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/number-converter" />
-    </Head>
-
     <div className="max-w-3xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">

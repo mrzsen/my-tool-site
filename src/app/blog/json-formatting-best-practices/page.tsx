@@ -1,16 +1,9 @@
 "use client";
 
-import Head from "next/head";
 import Link from "next/link";
 
 export default function BlogPost() {
   return (
-    <Head>
-      <title>JSON 格式化最佳实践</title>
-      <meta name="description" content="介绍JSON格式化的最佳实践，包括缩进、校验和常见错误处理。" />
-      <link rel="canonical" href="https://tool.wnsj.net/blog/json-formatting-best-practices" />
-    </Head>
-
     <div className="max-w-3xl mx-auto px-4 py-8">
       <article className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
         <header className="mb-8">

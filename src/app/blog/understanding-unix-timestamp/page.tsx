@@ -1,16 +1,9 @@
 "use client";
 
-import Head from "next/head";
 import Link from "next/link";
 
 export default function BlogPost() {
   return (
-    <Head>
-      <title>深入理解 Unix 时间戳</title>
-      <meta name="description" content="深入讲解Unix时间戳的原理、应用场景以及常见转换方法。" />
-      <link rel="canonical" href="https://tool.wnsj.net/blog/understanding-unix-timestamp" />
-    </Head>
-
     <div className="max-w-3xl mx-auto px-4 py-8">
       <article className="bg-white rounded-lg shadow-md border border-gray-200 p-8">
         <header className="mb-8">

@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function CssFormatterPage() {
@@ -76,12 +75,6 @@ export default function CssFormatterPage() {
   }, []);
 
   return (
-    <Head>
-      <title>CSS 格式化工具</title>
-      <meta name="description" content="在线CSS代码格式化美化工具，支持样式表压缩。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/css-formatter" />
-    </Head>
-
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -101,7 +94,7 @@ export default function CssFormatterPage() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="body { color: red; }"
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
           />
         </div>
         <div>
@@ -112,7 +105,7 @@ export default function CssFormatterPage() {
             value={output}
             readOnly
             placeholder="结果将在这里显示..."
-            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize font-mono text-sm"
+            className="w-full h-80 p-3 border border-gray-300 rounded-lg bg-gray-50 resize-none font-mono text-sm"
           />
         </div>
       </div>

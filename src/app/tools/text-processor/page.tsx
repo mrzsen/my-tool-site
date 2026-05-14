@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 export default function TextProcessorPage() {
@@ -118,12 +117,6 @@ export default function TextProcessorPage() {
   const currentMode = modes.find((m) => m.key === mode);
 
   return (
-    <Head>
-      <title>文本处理工具箱</title>
-      <meta name="description" content="在线文本处理工具，支持去重、排序、去空格、大小写转换等多种功能。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/text-processor" />
-    </Head>
-
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -172,7 +165,7 @@ export default function TextProcessorPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="在此输入要处理的文本..."
-          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm mb-4"
+          className="w-full h-40 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm mb-4"
         />
 
         {/* 操作按钮 */}

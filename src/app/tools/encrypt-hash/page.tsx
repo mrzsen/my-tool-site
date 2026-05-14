@@ -1,6 +1,5 @@
 "use client";
 
-import Head from "next/head";
 import { useState, useCallback } from "react";
 
 const hashAlgorithms = ["MD5", "SHA-1", "SHA-256", "SHA-384", "SHA-512"];
@@ -56,12 +55,6 @@ export default function EncryptHashPage() {
   }, [result]);
 
   return (
-    <Head>
-      <title>加密哈希工具(MD5/SHA)</title>
-      <meta name="description" content="支持MD5、SHA-1、SHA-256、SHA-384、SHA-512等多种哈希算法在线计算。" />
-      <link rel="canonical" href="https://tool.wnsj.net/tools/encrypt-hash" />
-    </Head>
-
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -102,7 +95,7 @@ export default function EncryptHashPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="在此输入要加密的内容..."
-          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+          className="w-full h-32 p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
         />
 
         <button

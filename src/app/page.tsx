@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import AdSenseSlot from "@/components/AdSenseSlot";
 
 const tools = [
   {
@@ -288,6 +289,11 @@ export default function Home() {
               <div className="text-sm text-gray-500">博客文章</div>
             </div>
           </div>
+
+          {/* 广告位 */}
+          <div className="mt-10 max-w-4xl mx-auto">
+            <AdSenseSlot slot="1234567890" style={{ minHeight: "90px" }} />
+          </div>
         </div>
       </section>
 
@@ -376,8 +382,13 @@ export default function Home() {
                 没有找到匹配的工具
               </p>
             )}
-          </div>
+</div>
         )}
+
+        {/* 底部广告位 */}
+        <div className="mt-12 max-w-4xl mx-auto">
+          <AdSenseSlot slot="9876543210" style={{ minHeight: "90px" }} />
+        </div>
       </main>
     </div>
   );

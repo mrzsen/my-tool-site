@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
+import Link from "next/link";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -27,6 +28,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  metadataBase: new URL("https://www.wnsj.net"),
+  alternates: {
+    canonical: "./",
   },
 };
 

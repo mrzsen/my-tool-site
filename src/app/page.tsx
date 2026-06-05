@@ -292,7 +292,7 @@ export default function Home() {
 
           {/* 广告位 */}
           <div className="mt-10 max-w-4xl mx-auto">
-            <AdSenseSlot slot="1234567890" style={{ minHeight: "90px" }} />
+            <AdSenseSlot slot="7230443707" style={{ minHeight: "90px" }} />
           </div>
         </div>
       </section>
@@ -387,7 +387,7 @@ export default function Home() {
 
         {/* 底部广告位 */}
         <div className="mt-12 max-w-4xl mx-auto">
-          <AdSenseSlot slot="9876543210" style={{ minHeight: "90px" }} />
+          <AdSenseSlot slot="7230443707" style={{ minHeight: "90px" }} />
         </div>
       </main>
     </div>

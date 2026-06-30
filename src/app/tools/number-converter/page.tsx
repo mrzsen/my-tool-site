@@ -293,6 +293,59 @@ export default function NumberConverterPage() {
           </li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持二进制、八进制、十进制、十六进制相互转换</li>
+            <li>实时转换，输入即显示所有进制的对应值</li>
+            <li>支持大数转换，理论上限取决于浏览器</li>
+            <li>十六进制支持大写和小写输出</li>
+            <li>支持数字分组显示，便于阅读</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">选择一个进制作为输入格式，输入对应的数字，工具会自动在所有进制之间进行转换。例如输入十进制 255，会同时显示二进制 11111111、八进制 377、十六进制 FF。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">进制转换示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`十进制: 255
+二进制: 11111111
+八进制: 377
+十六进制: FF
+
+十进制: 1024
+二进制: 10000000000
+八进制: 2000
+十六进制: 400`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">十六进制中的 A-F 代表什么？</h3>
+              <p className="text-gray-700">十六进制使用 0-9 和 A-F 表示 0-15 的值。A=10、B=11、C=12、D=13、E=14、F=15。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持负数转换吗？</h3>
+              <p className="text-gray-700">本工具主要处理无符号整数。负数的二进制表示涉及补码概念，建议使用专门的计算工具。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">为什么二进制看起来很长的数字？</h3>
+              <p className="text-gray-700">因为二进制只使用 0 和 1 表示数字，同样的数值用二进制表示需要的位数比十进制多约 3.3 倍。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

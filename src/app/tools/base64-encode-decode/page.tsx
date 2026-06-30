@@ -153,6 +153,57 @@ export default function Base64Page() {
           它不是一种加密方式，而是编码方式，可以轻松被解码。
         </p>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持 Base64 编码和解码双向转换</li>
+            <li>正确处理中文字符和 Unicode 字符</li>
+            <li>编码结果使用标准 Base64 字母表（A-Z, a-z, 0-9, +, /）</li>
+            <li>自动处理 = 填充字符</li>
+            <li>支持复制结果，快捷键切换</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在输入框中输入要编码的文本或要解码的 Base64 字符串。选择「编码」模式将普通文本转为 Base64，选择「解码」模式将 Base64 字符串还原为原始文本。支持中文、英文、符号等任意字符。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">Base64 编解码示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`# 编码
+输入: Hello World
+编码后: SGVsbG8gV29ybGQ=
+
+# 解码
+输入: SGVsbG8gV29ybGQ=
+解码后: Hello World`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">Base64 是加密吗？</h3>
+              <p className="text-gray-700">不是。Base64 只是一种编码方式，不是加密，它编码后的数据可以轻松解码回原文。请不要用 Base64 保护敏感数据。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">为什么编码结果末尾有等号？</h3>
+              <p className="text-gray-700">等号是 Base64 的填充字符。当原始数据长度不是 3 字节的整数倍时，会在输出末尾添加一个或两个等号。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">Base64 编码会让数据变大吗？</h3>
+              <p className="text-gray-700">会的。Base64 编码会使数据体积增加约 33%，每 3 个字节编码为 4 个字符。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

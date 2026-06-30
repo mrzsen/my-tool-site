@@ -84,6 +84,22 @@ const posts: Post[] = [
     category: "实用指南",
     readTime: "10分钟",
   },
+  {
+    slug: "color-converter-guide",
+    title: "颜色转换完全指南：RGB、HEX和HSL详解",
+    excerpt: "RGB、HEX、HSL三种颜色格式的原理和转换方法，帮助前端开发者和设计师轻松应对颜色编码问题。",
+    date: "2026-06-30",
+    category: "技术教程",
+    readTime: "8分钟",
+  },
+  {
+    slug: "online-password-generator",
+    title: "在线密码生成器：打造无法破解的强密码",
+    excerpt: "密码安全是保护数字身份的第一道防线。本文介绍如何利用密码生成器创建真正安全的强密码。",
+    date: "2026-06-30",
+    category: "网络安全",
+    readTime: "8分钟",
+  },
 ];
 
 export default function BlogPage() {

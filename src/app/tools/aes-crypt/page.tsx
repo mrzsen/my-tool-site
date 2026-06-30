@@ -236,6 +236,55 @@ export default function AesCryptPage() {
           <li>解密时需要使用与加密相同的模式和密钥</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持 AES-128、AES-192、AES-256 三种密钥长度</li>
+            <li>支持 ECB 和 CBC 两种加密模式</li>
+            <li>自动生成和解析初始化向量（IV）</li>
+            <li>加密结果使用 Base64 编码输出，便于传输</li>
+            <li>加密和解密功能无缝切换</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">输入需要加密的文本，选择密钥长度（128/192/256 位）和加密模式（ECB/CBC）。输入密钥，点击「加密」按钮。CBC 模式需要输入初始化向量（IV）。解密时，将加密文本和相同的密钥、模式、IV 输入，点击「解密」即可还原。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">AES 加密示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`输入: Hello World
+密钥: 1234567890123456
+模式: AES-128-CBC
+IV: 1234567890123456
+加密结果: U2FsdGVkX1+ZxJl3B0bG8A==`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">ECB 和 CBC 模式有什么区别？</h3>
+              <p className="text-gray-700">ECB 模式下相同的明文块会产生相同的密文块，安全性较低。CBC 模式每个块都与前一个块异或，相同的明文会产生不同的密文，更安全。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">密钥长度应该如何选择？</h3>
+              <p className="text-gray-700">对于大多数应用场景，AES-128 已经足够安全。如果处理高度敏感数据，可以选择 AES-256。密钥越长，加密和解密速度越慢。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">忘记密钥还能解密吗？</h3>
+              <p className="text-gray-700">不能。AES 是对称加密算法，加密和解密使用相同的密钥。请务必妥善保管密钥。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

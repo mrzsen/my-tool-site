@@ -155,6 +155,60 @@ export default function XmlFormatterPage() {
           <li>结果可一键复制到剪贴板</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>智能缩进 XML 标签层级，树形结构一目了然</li>
+            <li>支持命名空间（xmlns）的完整保留和格式化</li>
+            <li>保持自闭合标签格式（&lt;tag /&gt;），尊重原始写法</li>
+            <li>支持单行压缩，减小 XML 数据体积</li>
+            <li>自动处理 CDATA、注释、处理指令等特殊节点</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">将需要格式化的 XML 代码粘贴到输入框中，点击「格式化」按钮即可对 XML 进行美化。支持包含命名空间、CDATA 段、注释的 XML 文档。点击「压缩」可以移除多余的空白字符，将 XML 压缩为紧凑格式，便于存储和传输。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">XML 格式化示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`<!-- 格式化前 -->
+<root><person><name>张三</name><age>25</age></person></root>
+
+<!-- 格式化后 -->
+<root>
+  <person>
+    <name>张三</name>
+    <age>25</age>
+  </person>
+</root>`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">XML 格式化和 HTML 格式化有什么区别？</h3>
+              <p className="text-gray-700">XML 更注重数据结构和标签的规范性，而 HTML 有更多语义化标签和特殊规则。 XML 格式化工具专注于保持标签层级清晰。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">格式化会改变 XML 中的数据内容吗？</h3>
+              <p className="text-gray-700">不会。格式化只调整空白字符和缩进，不会修改标签名称、属性值或文本内容。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持大文件 XML 格式化吗？</h3>
+              <p className="text-gray-700">工具基于浏览器本地运行，处理能力取决于您的设备。大多数常规 XML 文件都能流畅处理。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

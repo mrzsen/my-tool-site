@@ -186,6 +186,57 @@ export default function TimeDifferencePage() {
           <li>纪念日：计算相识/结婚/生日等纪念</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持计算两个日期之间的精确时间差</li>
+            <li>自动处理不同天数、月份和年份的差异</li>
+            <li>支持跨时区计算（UTC 和本地时区）</li>
+            <li>结果显示为天、时、分、秒的复合格式</li>
+            <li>支持添加和减去时间间隔</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">选择起始日期和结束日期，工具会自动计算两者之间的时间差。支持精确到天、时、分、秒。可用于计算项目工期、倒计时、年龄等场景。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">时间差计算示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`起始时间: 2024-01-01 00:00:00
+结束时间: 2024-12-31 23:59:59
+时间差: 365天 23小时 59分钟 59秒
+
+起始时间: 2024-01-15 08:30:00
+结束时间: 2024-01-20 17:45:30
+时间差: 5天 9小时 15分钟 30秒`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">时间差计算考虑夏令时吗？</h3>
+              <p className="text-gray-700">工具使用 UTC 时间进行计算，不受夏令时影响。如果需要考虑夏令时，建议使用专业的时区转换工具。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持计算未来日期吗？</h3>
+              <p className="text-gray-700">支持。您可以设置任意未来的日期作为结束时间，计算从现在到未来的时间差。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">为什么我的计算结果和预期不一致？</h3>
+              <p className="text-gray-700">请检查您输入的日期格式是否正确，以及是否选择了正确的时区。工具默认使用您的本地时区。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

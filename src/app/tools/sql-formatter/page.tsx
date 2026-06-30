@@ -183,6 +183,64 @@ export default function SqlFormatterPage() {
           <li>支持常见 SQL 关键字自动换行</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持 SQL SELECT、INSERT、UPDATE、DELETE 等主要语句</li>
+            <li>30+ 个 SQL 关键字自动大写并换行（SELECT、FROM、WHERE、JOIN 等）</li>
+            <li>智能处理子查询嵌套层级</li>
+            <li>支持 JOIN 语句的多种类型（INNER、LEFT、RIGHT、FULL）</li>
+            <li>保持字符串和数字字面量的完整性</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">将您的 SQL 查询语句粘贴到输入框，点击「格式化」即可美化 SQL 代码。支持标准 SQL 语法。格式化后关键字自动大写、子查询自动缩进、JOIN 语句对齐，让复杂的 SQL 查询变得清晰易读。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">SQL 格式化示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`-- 格式化前
+SELECT u.name,o.total FROM users u JOIN orders o ON u.id=o.user_id WHERE o.total>100 ORDER BY o.total DESC
+
+-- 格式化后
+SELECT
+  u.name,
+  o.total
+FROM
+  users u
+  JOIN orders o ON u.id = o.user_id
+WHERE
+  o.total > 100
+ORDER BY
+  o.total DESC`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">支持哪些数据库方言？</h3>
+              <p className="text-gray-700">主要支持标准 SQL 语法。MySQL、PostgreSQL、SQLite 等主流数据库的基本语法都兼容。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">格式化后能保持查询性能吗？</h3>
+              <p className="text-gray-700">完全不影响。格式化只改变 SQL 的排版，不影响数据库执行计划和查询性能。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持存储过程和函数吗？</h3>
+              <p className="text-gray-700">支持基本的存储过程和函数语法格式化。复杂的 PL/SQL 或 T-SQL 可能需要专门的工具。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

@@ -251,6 +251,54 @@ export default function RegexTesterPage() {
           </div>
         </div>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持自定义正则表达式和 flags 修饰符（g/i/m），实时执行匹配测试</li>
+            <li>清晰的匹配结果展示，包含匹配内容、位置索引和匹配总数</li>
+            <li>内置替换功能，支持将匹配内容替换为指定文本并一键复制结果</li>
+            <li>预置常用正则模板：手机号、邮箱、URL、IP 地址等常见模式</li>
+            <li>即时错误检测，无效正则表达式会给出详细的语法错误信息</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在正则表达式输入框中输入要测试的正则模式，勾选需要的修饰符（全局匹配 g、忽略大小写 i、多行模式 m）。在测试文本区域中输入待匹配的文本，点击「执行匹配」按钮查看所有匹配结果。替换功能可以将匹配内容替换为指定文本。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">正则测试示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`正则: \\d{11}
+文本: 我的电话是13812345678和15987654321
+匹配: 13812345678（位置 5）、15987654321（位置 18）
+总数: 2 个匹配`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">正则表达式中的特殊字符如何匹配字面含义？</h3>
+              <p className="text-gray-700">特殊字符如 . * + ? 等需要使用反斜杠转义，例如 \. 匹配句点，\* 匹配星号。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">全局标志 g 和非全局匹配有什么区别？</h3>
+              <p className="text-gray-700">全局标志 g 会查找所有匹配结果，非全局模式找到第一个匹配后就停止。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">为什么我的正则表达式在替换时报错？</h3>
+              <p className="text-gray-700">替换功能会自动移除全局标志 g。如果需要替换所有匹配，请在正则中保留 g 标志。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

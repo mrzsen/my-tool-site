@@ -90,6 +90,53 @@ export default function QRGeneratorPage() {
       )}
 
       <canvas ref={canvasRef} className="hidden" />
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持将文本、网址等信息快速转换为二维码图片</li>
+            <li>支持自定义二维码大小和容错级别</li>
+            <li>生成的二维码永久有效，无过期时间</li>
+            <li>支持下载二维码为 PNG 图片</li>
+            <li>支持批量生成多个二维码</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在输入框中输入需要生成二维码的内容（文本、网址、联系方式等），选择二维码尺寸和容错级别，点击生成按钮即可生成二维码图片。支持右键保存或点击下载按钮保存为 PNG 格式。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">二维码应用场景</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`场景1: 网站链接二维码 - 输入网址即可生成
+场景2: WiFi 连接二维码 - 加密信息一键分享
+场景3: 名片二维码 - 存储姓名、电话、邮箱`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">生成的二维码会过期吗？</h3>
+              <p className="text-gray-700">不会。二维码本身是一张静态图片，只要您生成的图片不丢失，就永久有效。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">二维码能存储多少信息？</h3>
+              <p className="text-gray-700">QR 码最大可存储 7089 个数字字符或 4296 个字母数字字符或 2953 个字节。建议内容不要过长。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">扫码无法识别怎么办？</h3>
+              <p className="text-gray-700">可以尝试增大二维码尺寸或降低容错级别。同时确保二维码图片清晰，没有遮挡或扭曲。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

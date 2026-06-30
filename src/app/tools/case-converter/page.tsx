@@ -137,6 +137,57 @@ export default function CaseConverterPage() {
           </div>
         </div>
       )}
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持多种大小写转换模式：大写、小写、首字母大写、首字母小写</li>
+            <li>支持驼峰式（camelCase）、帕斯卡（PascalCase）、蛇形式（snake_case）等格式转换</li>
+            <li>支持短横线式（kebab-case）和常量式（CONSTANT_CASE）</li>
+            <li>正确处理包含空格、连字符和下划线的混合文本</li>
+            <li>不影响数字和非字母字符</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">输入需要转换的文本，选择目标转换模式。支持大小写切换（全大写、全小写、首字母大写）和命名风格转换（驼峰、蛇形、短横线等）。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">大小写转换示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`输入: hello_world_example
+
+camelCase:    helloWorldExample
+PascalCase:   HelloWorldExample
+snake_case:   hello_world_example
+kebab-case:   hello-world-example
+CONSTANT:     HELLO_WORLD_EXAMPLE`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">camelCase 和 PascalCase 有什么区别？</h3>
+              <p className="text-gray-700">camelCase 首字母小写（如 getUserName），PascalCase 首字母大写（如 GetUserName）。前者常用于变量和函数名，后者常用于类和组件名。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">不同编程语言使用什么命名风格？</h3>
+              <p className="text-gray-700">JavaScript 使用 camelCase（变量）和 PascalCase（类），Python 使用 snake_case，CSS 使用 kebab-case 作为属性名。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持中文命名转换吗？</h3>
+              <p className="text-gray-700">中文等非 ASCII 字符在命名转换中会被保留原样。命名风格转换主要针对英文单词间的分隔符。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

@@ -96,6 +96,55 @@ export default function WordCounterPage() {
           <div className="text-sm text-gray-600 mt-1">段落数</div>
         </div>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>实时统计字符数（含空格和不含空格）、单词数</li>
+            <li>支持中英文混排文本的正确统计</li>
+            <li>统计段落数和行数</li>
+            <li>显示最长段落长度和平均段落长度</li>
+            <li>纯客户端处理，数据不上传服务器</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在文本框中输入或粘贴需要统计的文字，字符数、单词数、段落数等信息会实时更新。支持中英文混排，中文汉字会按字统计，英文按单词统计。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">字数统计示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`输入: Hello World! 你好世界！
+字符数（含空格）: 20
+字符数（不含空格）: 18
+单词数: 4
+段落数: 1`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">中文和英文的统计方式一样吗？</h3>
+              <p className="text-gray-700">不完全一样。中文按字（汉字）统计，英文按单词（空格分隔）统计。在混排文本中，两种方式会同时适用。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">这个工具适合用于论文统计吗？</h3>
+              <p className="text-gray-700">可以作为参考，但正式的论文投稿建议使用专业的字数统计工具，因为不同机构对字数统计的定义可能不同。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">标点符号算不算字数？</h3>
+              <p className="text-gray-700">算。字符数统计包含所有字符，包括标点符号、空格和特殊字符。不含空格的字数会排除空格。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

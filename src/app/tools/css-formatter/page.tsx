@@ -152,6 +152,61 @@ export default function CssFormatterPage() {
           <li>支持 CSS 注释的移除</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>智能缩进选择器和属性，支持嵌套规则（@media、@keyframes）</li>
+            <li>保持属性顺序不变，支持自定义属性排序</li>
+            <li>支持 CSS3 和 CSS4 最新语法特性</li>
+            <li>压缩模式可移除注释和多余空白</li>
+            <li>保留浏览器前缀（-webkit-、-moz- 等）</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">将 CSS 代码粘贴到输入框，点击「格式化」即可美化样式表。支持选择器分组、属性排序、媒体查询嵌套等场景。压缩模式可以将 CSS 压缩为单行格式。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">CSS 格式化示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`/* 格式化前 */
+body{margin:0;padding:0}.container{max-width:1200px}
+
+/* 格式化后 */
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1200px;
+}`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">CSS 格式化会改变属性的功能吗？</h3>
+              <p className="text-gray-700">不会。格式化仅调整缩进和换行，不修改任何属性值和选择器名称，保证功能完全不变。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持 SCSS 或 Less 等预处理器吗？</h3>
+              <p className="text-gray-700">目前主要支持标准 CSS。如果您使用 SCSS 或 Less，建议先编译为标准 CSS 后再进行格式化。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">格式化后代码变长，会影响性能吗？</h3>
+              <p className="text-gray-700">不影响。CSS 文件的执行性能不受格式化影响。如果担心文件大小，可以使用压缩模式生成精简版本。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

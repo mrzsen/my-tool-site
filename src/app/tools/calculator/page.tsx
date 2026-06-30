@@ -206,6 +206,53 @@ export default function CalculatorPage() {
           <li>± 切换正负号</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持加、减、乘、除四种基本运算</li>
+            <li>支持括号优先级运算</li>
+            <li>支持连续计算</li>
+            <li>实时显示输入表达式</li>
+            <li>支持清除和删除操作</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">使用界面按钮或键盘输入计算表达式，按等号获取结果。支持括号来控制运算优先级，支持小数计算。常用于日常简单的数学计算。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">计算器示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`输入: (15 + 3) × 4 ÷ 2
+过程: 18 × 4 ÷ 2 = 72 ÷ 2
+结果: 36`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">支持的运算优先级是什么？</h3>
+              <p className="text-gray-700">遵循标准数学运算优先级：括号 &gt; 乘除 &gt; 加减。例如 2 + 3 × 4 = 14（先乘后加）。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持键盘输入吗？</h3>
+              <p className="text-gray-700">支持。您可以使用键盘上的数字键、运算符键和回车键进行操作。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">计算结果精度如何？</h3>
+              <p className="text-gray-700">使用标准的浮点运算，对于大多数日常计算精度足够。对于需要高精度的科学计算，建议使用专业工具。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

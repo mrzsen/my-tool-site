@@ -152,6 +152,61 @@ export default function JsFormatterPage() {
           <li>支持移除单行和多行注释</li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持 ES6+ 语法，包括箭头函数、模板字符串、解构赋值</li>
+            <li>智能缩进和换行，保持代码风格一致性</li>
+            <li>支持去除 JavaScript 注释，生成精简代码</li>
+            <li>保留字符串和正则表达式字面量的完整性</li>
+            <li>支持压缩为单行格式</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">将 JavaScript 代码粘贴到输入框，选择格式化和缩进大小，点击「格式化」按钮即可美化代码。支持最新的 ES2023 语法特性。可以勾选去除注释，生成更简洁的代码。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">JS 格式化示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`// 格式化前
+const add=(a,b)=>a+b;const obj={name:'test',fn(){return this.name}}
+
+// 格式化后
+const add = (a, b) => a + b;
+const obj = {
+  name: 'test',
+  fn() {
+    return this.name;
+  }
+};`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">JS 格式化后代码功能会变化吗？</h3>
+              <p className="text-gray-700">不会。格式化仅调整代码的排版格式，不会改变代码执行逻辑。所有字符串、正则表达式和注释都受到保护。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持 TypeScript 代码吗？</h3>
+              <p className="text-gray-700">当前版本主要针对标准 JavaScript。TypeScript 代码建议使用官方的 tsc 或 prettier 进行格式化。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">去除注释后还能恢复吗？</h3>
+              <p className="text-gray-700">不能。去除注释是不可逆的操作。建议保留原始代码备份，或将去除注释后的代码用于生产环境。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

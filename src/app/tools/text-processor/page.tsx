@@ -253,6 +253,61 @@ export default function TextProcessorPage() {
           </li>
         </ul>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>文本去重：移除重复行，保留首次出现的顺序</li>
+            <li>文本排序：按字母顺序或逆序排列</li>
+            <li>去除空行：清理文本中的空白行</li>
+            <li>去除空格：移除行首、行尾或所有空格</li>
+            <li>支持大小写转换、添加行号、反转顺序等操作</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在输入框中粘贴需要处理的文本，选择需要的处理操作。多项操作可以组合使用，例如先排序再去重。处理结果会实时或点击处理后显示。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">文本处理示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`输入:
+banana
+apple
+banana
+cherry
+apple
+
+去重排序后:
+apple
+banana
+cherry`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">多个操作可以同时使用吗？</h3>
+              <p className="text-gray-700">可以。您可以选择多个操作组合使用，工具会按顺序依次处理。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">支持大型文本处理吗？</h3>
+              <p className="text-gray-700">处理能力取决于您的浏览器性能。对于超过几万行的文本，处理时间可能会稍长。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">处理过程中数据安全吗？</h3>
+              <p className="text-gray-700">所有处理完全在浏览器本地完成，您的数据不会上传到互联网。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

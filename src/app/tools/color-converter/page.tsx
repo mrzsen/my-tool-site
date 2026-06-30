@@ -359,6 +359,57 @@ export default function ColorConverterPage() {
           </div>
         </div>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持 RGB、HEX、HSL 三种颜色格式相互转换</li>
+            <li>实时预览颜色效果，所见即所得</li>
+            <li>支持输入颜色名称快速识别</li>
+            <li>复制任意格式的颜色代码</li>
+            <li>支持透明度（Alpha）转换</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">输入任意格式的颜色代码（如 #FF0000、rgb(255,0,0)、hsl(0,100%,50%)），工具会自动识别并转换为其他格式。实时预览区域会显示对应的颜色效果。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">颜色转换示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`HEX: #FF6600
+RGB: rgb(255, 102, 0)
+HSL: hsl(24, 100%, 50%)
+
+HEX: #3366FF
+RGB: rgb(51, 102, 255)
+HSL: hsl(225, 100%, 60%)`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">HEX 颜色中 #FFF 和 #FFFFFF 有什么区别？</h3>
+              <p className="text-gray-700">#FFF 是 #FFFFFF 的缩写形式，当两位重复时可以使用 3 位十六进制。两者颜色值相同。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">HSL 模型的优势是什么？</h3>
+              <p className="text-gray-700">HSL 更符合人类对颜色的感知。调整亮度（Lightness）可以让颜色整体变亮或变暗，调整饱和度（Saturation）可以控制颜色的鲜艳程度。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">CSS 中支持哪种颜色格式？</h3>
+              <p className="text-gray-700">CSS 支持 RGB、HEX、HSL 以及各自的透明度变体（RGBA、HSLA）。现代 CSS 还支持 HWB、LAB 和 LCH 等更丰富的格式。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

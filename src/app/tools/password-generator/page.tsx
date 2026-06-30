@@ -140,6 +140,53 @@ export default function PasswordGeneratorPage() {
           </label>
         </div>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持自定义密码长度（1-128 位）</li>
+            <li>可选择包含大写字母、小写字母、数字、特殊符号</li>
+            <li>使用浏览器加密级随机数生成（crypto.getRandomValues）</li>
+            <li>排除易混淆字符（如 0/O、1/l）可选</li>
+            <li>密码强度实时评估</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">选择密码长度（建议至少 12 位），勾选需要的字符类型（大写字母、小写字母、数字、特殊符号），点击「生成密码」即可获得随机生成的强密码。支持一键复制密码。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">密码生成示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`12位含全部字符: aB3#kL9$xR2@
+16位含全部字符: F7&gH2*nM5@pQ9#s
+20位含全部字符: wP8$rT3&yU6*iO0(lK2)vB`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">多少位的密码才安全？</h3>
+              <p className="text-gray-700">建议至少 12 位。包含大小写字母、数字和符号的 12 位密码，暴力破解需要数百万年。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">生成的密码我记不住怎么办？</h3>
+              <p className="text-gray-700">建议使用密码管理器（如 1Password、Bitwarden）来保存密码。您只需记住主密码即可。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">密码生成依赖网络吗？</h3>
+              <p className="text-gray-700">不依赖。密码完全在您的浏览器本地生成，不会通过网络传输，确保密码安全。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

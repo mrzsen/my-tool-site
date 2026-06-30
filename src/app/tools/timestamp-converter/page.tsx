@@ -174,6 +174,55 @@ export default function TimestampConverterPage() {
           </div>
         </div>
       )}
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持 Unix 秒级（10 位）和毫秒级（13 位）时间戳</li>
+            <li>自动识别时间戳精度</li>
+            <li>实时显示转换后的日期时间</li>
+            <li>支持复制原始时间戳和转换结果</li>
+            <li>根据浏览器时区自动转换本地时间</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在输入框中输入 Unix 时间戳（10 位秒级或 13 位毫秒级），工具会自动识别并转换为对应的日期时间。同时在下方显示 UTC 时间和本地时间。支持一键复制转换结果。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">时间戳转换示例</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`输入: 1704067200 (秒级)
+结果: 2024-01-01 08:00:00 (UTC+8 北京时间)
+
+输入: 1704067200000 (毫秒级)
+结果: 2024-01-01 08:00:00 (UTC+8 北京时间)`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">什么是 Unix 时间戳？</h3>
+              <p className="text-gray-700">Unix 时间戳是从 1970 年 1 月 1 日（UTC）开始经过的秒数（10 位）或毫秒数（13 位）。它是计算机系统中常用的时间表示方式。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">时间戳和时间有什么区别？</h3>
+              <p className="text-gray-700">时间戳是跨时区的绝对时间，而显示时间则取决于所在时区。同一个时间戳在不同时区下显示的时间不同。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">2038 年问题是什么？</h3>
+              <p className="text-gray-700">使用 32 位整数存储的秒级时间戳会在 2038 年溢出。现代系统已改用 64 位整数或毫秒级时间戳解决此问题。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

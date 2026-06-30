@@ -176,6 +176,61 @@ export default function JsonFormatterPage() {
           压缩
         </button>
       </div>
-    </div>
+    
+      {/* Content section */}
+      <div className="mt-12 space-y-8 border-t border-gray-200 pt-8">
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">功能特点</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>支持带注释的 JSON（// 和 /* */），无需手动删除注释即可直接格式化</li>
+            <li>自动去除尾随逗号，兼容宽松的 JSON 解析规则</li>
+            <li>支持 2/4/8 空格缩进选择，满足不同编码规范</li>
+            <li>一键压缩 JSON 为单行，节省存储空间和传输带宽</li>
+            <li>实时语法校验，错误位置精确定位</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用说明</h2>
+          <p className="text-gray-700 leading-relaxed">在左侧输入框中粘贴需要格式化的 JSON 字符串，支持带注释和尾随逗号的格式。选择缩进大小（2/4/8 空格），点击「格式化」按钮即可得到美化后的 JSON。点击「压缩」按钮可将 JSON 压缩为单行。格式化后可通过「复制」按钮一键复制结果。如果输入不是合法 JSON，页面会立即显示错误信息，帮助您快速定位问题。</p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">使用示例</h2>
+          <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">带注释的 JSON 格式化</h3>
+          <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">{`// 输入：
+{
+  "name": "张三", // 姓名
+  "age": 25 /* 年龄 */
+}
+
+// 格式化后：
+{
+  "name": "张三",
+  "age": 25
+}`}</pre>
+
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">常见问题</h2>
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold text-gray-900">JSON 格式化支持哪些注释格式？</h3>
+              <p className="text-gray-700">支持两种注释格式：单行注释 // 和多行注释 /* */。开启「支持注释」选项后，格式化时会自动去除这些注释。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">尾随逗号是什么意思？</h3>
+              <p className="text-gray-700">尾随逗号指 JSON 对象或数组中最后一个元素后面的逗号，如 &lbrace;"a":1,"b":2,&rbrace;。标准 JSON 不允许尾随逗号，但本工具可以自动去除。</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-gray-900">格式化和压缩有什么区别？</h3>
+              <p className="text-gray-700">格式化会将 JSON 展开为带缩进的多行格式，便于阅读；压缩会将 JSON 压缩为单行字符串，节省存储空间。</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+</div>
   );
 }

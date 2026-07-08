@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "在线工具箱 - 免费在线工具集合",
     description:
       "提供免费的在线工具集合，包括JSON格式化、加密解密、编码转换、文本处理等23款实用工具。",
-    url: "https://tool.wnsj.net",
+    url: "https://www.wnsj.net",
     siteName: "在线工具箱",
   },
   robots: {
@@ -50,20 +50,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
-          `}
-        </Script>
+        {/* Google Analytics - 请替换为真实的跟踪ID后再启用 */}
       </head>
       <body className={`${inter.className} min-h-full flex flex-col bg-gray-50`}>
         <Navbar />

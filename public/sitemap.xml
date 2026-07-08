@@ -12,7 +12,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.wnsj.net/contact</loc>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.wnsj.net/privacy</loc>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/terms</loc>
     <lastmod>2026-07-08</lastmod>
     <priority>0.8</priority>
   </url>
@@ -24,47 +34,57 @@
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/understanding-unix-timestamp</loc>
-    <lastmod>2024-01-05</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/json-formatting-best-practices</loc>
-    <lastmod>2024-01-08</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/qr-code-applications</loc>
-    <lastmod>2024-01-10</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/password-security-tips</loc>
-    <lastmod>2024-01-12</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/how-to-use-word-counter</loc>
-    <lastmod>2024-01-15</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/encryption-guide</loc>
-    <lastmod>2024-01-18</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/formatting-best-practices</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/regex-guide</loc>
-    <lastmod>2024-01-22</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.wnsj.net/blog/base64-url-guide</loc>
-    <lastmod>2024-01-25</lastmod>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/blog/color-converter-guide</loc>
+    <lastmod>2026-07-08</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/blog/online-password-generator</loc>
+    <lastmod>2026-07-08</lastmod>
     <priority>0.6</priority>
   </url>
   <url>

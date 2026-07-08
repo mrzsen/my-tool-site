@@ -25,7 +25,9 @@ export default function Footer() {
             <h4 className="text-md font-semibold mb-3">更多信息</h4>
             <ul className="space-y-2 text-sm text-gray-300">
               <li><Link href="/about" className="hover:text-white">关于我们</Link></li>
+              <li><Link href="/contact" className="hover:text-white">联系我们</Link></li>
               <li><Link href="/privacy" className="hover:text-white">隐私政策</Link></li>
+              <li><Link href="/terms" className="hover:text-white">服务条款</Link></li>
               <li><Link href="/blog" className="hover:text-white">博客文章</Link></li>
             </ul>
           </div>

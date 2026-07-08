@@ -30,11 +30,11 @@ export default function Navbar() {
             <Link href="/blog" className="text-gray-300 hover:text-white transition text-sm">
               博客
             </Link>
-            <Link href="/privacy" className="text-gray-300 hover:text-white transition text-sm">
-              隐私政策
-            </Link>
             <Link href="/about" className="text-gray-300 hover:text-white transition text-sm">
               关于
+            </Link>
+            <Link href="/contact" className="text-gray-300 hover:text-white transition text-sm">
+              联系我们
             </Link>
           </div>
         </div>

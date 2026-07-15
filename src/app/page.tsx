@@ -285,7 +285,7 @@ export default function Home() {
               <div className="text-sm text-gray-500">分类数量</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-400">10</div>
+              <div className="text-3xl font-bold text-purple-400">11</div>
               <div className="text-sm text-gray-500">博客文章</div>
             </div>
           </div>
@@ -299,6 +299,31 @@ export default function Home() {
 
       {/* 工具分类列表 */}
       <main className="max-w-7xl mx-auto px-4 py-16">
+
+        {/* 关于本站 */}
+        <section className="mb-16 max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl font-bold text-white mb-6">为什么选择我们的在线工具箱？</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">本地处理，保护隐私</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                所有工具均在您的浏览器本地运行，输入数据不会上传到任何服务器。无论是加密解密、编码转换还是数据处理，您的信息始终存储在您的设备上，处理完成后立即从内存中清除。
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">永久免费，无需注册</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                所有功能完全免费，无隐藏收费，无使用限制。无需注册账户或登录，打开浏览器即可使用。我们致力于为开发者和普通用户提供真正免费、实用的在线工具。
+              </p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-white mb-3">持续更新，多平台支持</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                我们定期添加新工具和功能，不断优化用户体验。电脑、平板、手机均可使用，界面自适应。基于现代前端技术构建，操作流畅无卡顿。
+              </p>
+            </div>
+          </div>
+        </section>
         {searchQuery && (
           <p className="text-gray-400 mb-6">
             搜索「<span className="text-blue-400">{searchQuery}</span>」找到{" "}

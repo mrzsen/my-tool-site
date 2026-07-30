@@ -39,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" className="h-full">
       <head>
+        <meta name="google-site-verification" content="hZzo_3YnsiFBj41xJ1vVrAQLD-jhVzidFcyRIn1wXS8" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9418499386631481"

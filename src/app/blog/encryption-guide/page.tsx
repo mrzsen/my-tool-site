@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "加密解密工具完全使用指南 - 在线工具箱",
+  description: "详细介绍MD5、SHA、AES等加密解密工具的使用方法和应用场景。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "加密解密工具完全使用指南 - 在线工具箱",
+    description: "详细介绍MD5、SHA、AES等加密解密工具的使用方法和应用场景。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

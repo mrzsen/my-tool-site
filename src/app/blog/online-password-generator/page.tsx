@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "在线密码生成器 - 在线工具箱",
+  description: "利用密码生成器创建真正安全的强密码，保护数字身份安全。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "在线密码生成器 - 在线工具箱",
+    description: "利用密码生成器创建真正安全的强密码，保护数字身份安全。",
+  },
+};
+
+
 
 export default function PasswordGeneratorGuide() {
   return (

@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "正则表达式入门完全指南 - 在线工具箱",
+  description: "从基础语法讲起，全面了解正则表达式的使用方法。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "正则表达式入门完全指南 - 在线工具箱",
+    description: "从基础语法讲起，全面了解正则表达式的使用方法。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

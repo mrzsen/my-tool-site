@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "2024年密码安全完全指南 - 在线工具箱",
+  description: "如何创建强密码、管理密码以及保护在线账户安全的最佳实践。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "2024年密码安全完全指南 - 在线工具箱",
+    description: "如何创建强密码、管理密码以及保护在线账户安全的最佳实践。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

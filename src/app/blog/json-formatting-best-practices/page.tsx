@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "JSON格式化最佳实践 - 在线工具箱",
+  description: "JSON格式化的最佳实践，包括缩进、校验和常见错误处理。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "JSON格式化最佳实践 - 在线工具箱",
+    description: "JSON格式化的最佳实践，包括缩进、校验和常见错误处理。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

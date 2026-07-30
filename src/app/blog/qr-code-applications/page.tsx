@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "二维码的10种创意应用场景 - 在线工具箱",
+  description: "二维码在营销、教育、物流等领域的创意应用。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "二维码的10种创意应用场景 - 在线工具箱",
+    description: "二维码在营销、教育、物流等领域的创意应用。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

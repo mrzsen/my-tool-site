@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Base64与URL编码详解 - 在线工具箱",
+  description: "Base64和URL编码是Web开发中最常用的编码方式，本文深入浅出地讲解它们的原理和使用场景。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "Base64与URL编码详解 - 在线工具箱",
+    description: "Base64和URL编码是Web开发中最常用的编码方式，本文深入浅出地讲解它们的原理和使用场景。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

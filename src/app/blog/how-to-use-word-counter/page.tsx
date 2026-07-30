@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "如何使用字数统计工具提升写作效率 - 在线工具箱",
+  description: "字数统计工具的使用技巧，帮助提升写作效率和分析文章结构。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "如何使用字数统计工具提升写作效率 - 在线工具箱",
+    description: "字数统计工具的使用技巧，帮助提升写作效率和分析文章结构。",
+  },
+};
+
+
 
 export default function BlogPost() {
   return (

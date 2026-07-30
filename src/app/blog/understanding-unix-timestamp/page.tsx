@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 export default function BlogPost() {
@@ -111,6 +109,19 @@ const seconds = Math.floor(Date.now() / 1000);
 
 // Python
 import time
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "深入理解Unix时间戳 - 在线工具箱",
+  description: "Unix时间戳的原理、应用场景以及常见转换方法。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "深入理解Unix时间戳 - 在线工具箱",
+    description: "Unix时间戳的原理、应用场景以及常见转换方法。",
+  },
+};
+
+
 timestamp = int(time.time())
 
 // Java

@@ -1,6 +1,17 @@
-"use client";
-
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "颜色转换完全指南：RGB、HEX和HSL详解 - 在线工具箱",
+  description: "RGB、HEX、HSL三种颜色格式的原理和转换方法，帮助前端开发者和设计师轻松应对颜色编码问题。",
+  alternates: { canonical: "./" },
+  openGraph: {
+    title: "颜色转换完全指南：RGB、HEX和HSL详解 - 在线工具箱",
+    description: "RGB、HEX、HSL三种颜色格式的原理和转换方法，帮助前端开发者和设计师轻松应对颜色编码问题。",
+  },
+};
+
+
 
 export default function ColorConverterGuide() {
   return (

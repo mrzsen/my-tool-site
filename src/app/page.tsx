@@ -54,19 +54,11 @@ const tools = [
     category: "压缩/格式化",
   },
   {
-    id: "md5-hash",
-    name: "MD5 哈希",
-    description: "计算字符串的MD5哈希值，常用于文件校验。",
+    id: "encrypt-hash",
+    name: "MD5/SHA 哈希",
+    description: "计算MD5、SHA系列哈希值，常用于文件校验。",
     icon: "🔑",
-    href: "/tools/md5-hash",
-    category: "加密/哈希",
-  },
-  {
-    id: "sha-hash",
-    name: "SHA 哈希",
-    description: "支持SHA-1/256/384/512等多种安全哈希算法。",
-    icon: "🔏",
-    href: "/tools/sha-hash",
+    href: "/tools/encrypt-hash",
     category: "加密/哈希",
   },
   {

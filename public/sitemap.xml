@@ -103,12 +103,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.wnsj.net/tools/md5-hash</loc>
-    <lastmod>2026-07-08</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.wnsj.net/tools/sha-hash</loc>
+    <loc>https://www.wnsj.net/tools/encrypt-hash</loc>
     <lastmod>2026-07-08</lastmod>
     <priority>0.5</priority>
   </url>

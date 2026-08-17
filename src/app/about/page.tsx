@@ -12,7 +12,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">我们的使命</h2>
             <p className="leading-relaxed">
-              欢迎来到 wnsj.net 在线工具箱！我们致力于为开发者和普通用户提供免费、简单、实用的在线工具集合。目前网站已收录22款精品工具，涵盖数据格式化、加密解密、编码转换、文本处理、开发辅助等多个领域。
+              欢迎来到 wnsj.net 在线工具箱！我们致力于为开发者和普通用户提供免费、简单、实用的在线工具集合。目前网站已收录21款精品工具，涵盖数据格式化、加密解密、编码转换、文本处理、开发辅助等多个领域。
             </p>
             <p className="leading-relaxed mt-3">
               我们的目标是让每个人都能轻松完成日常工作和学习中的数据处理任务，无需安装任何软件，打开浏览器即可使用。所有工具永久免费，无需注册登录，真正做到即刻使用。

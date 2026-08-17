@@ -316,6 +316,65 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* 网站介绍文章 */}
+        <article className="mb-16 max-w-4xl mx-auto bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">免费在线工具箱，高效解决日常开发难题</h2>
+          <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
+            <p>
+              wnsj.net 是一个免费的在线工具集合网站，收录了 JSON 格式化、XML 格式化、HTML 格式化、CSS 格式化、JavaScript 代码美化、SQL 语句格式化、Base64 编解码、URL 编解码、MD5/SHA 哈希计算、AES 加密解密、正则表达式测试、文本处理、进制转换、时间戳转换、颜色转换、二维码生成、密码生成、字数统计、在线计算器等 21 款常用工具，覆盖了开发人员和普通用户日常工作中最常遇到的场景。
+            </p>
+            <p>
+              与传统的桌面软件不同，我们的在线工具无需下载安装，打开浏览器即可直接使用，并支持 Windows、macOS、Linux、Android、iOS 等几乎所有主流平台。所有工具都采用浏览器本地计算的方式，您输入的数据不会离开您的设备，从根本上保障了信息隐私安全。
+            </p>
+            <p>
+              例如，当您需要调试接口时，可以使用 JSON 格式化工具快速整理返回的数据，让嵌套结构一目了然；当您需要处理用户密码时，可以使用 MD5 或 SHA 哈希工具快速生成不可逆的摘要值；当您在前后端联调遇到中文乱码时，URL 编解码工具和 Base64 工具可以帮您快速定位并解决编码问题。这些看似简单的操作，如果使用命令行或编写脚本，往往需要耗费大量时间，而使用我们的在线工具只需粘贴、点击两步即可完成。
+            </p>
+            <p>
+              对于开发者而言，在线工具箱还能作为日常开发的重要辅助。正则表达式测试工具支持实时匹配预览，帮助您快速验证正则规则是否正确；时间戳转换工具支持秒级和毫秒级时间戳，方便您在开发中调试日期逻辑；进制转换工具支持二进制、八进制、十进制、十六进制之间的任意转换，是底层开发和学习的好帮手。
+            </p>
+            <p>
+              我们始终坚持免费、简洁、实用的理念，拒绝广告泛滥和弹窗骚扰，力求为每一位用户提供干净、高效的工具使用体验。如果您有任何建议或发现工具存在问题，欢迎通过联系我们页面与我们沟通，我们会持续改进和迭代，让在线工具箱真正成为您工作与学习中的得力助手。
+            </p>
+          </div>
+        </article>
+
+        {/* 常见问题 */}
+        <section className="mb-16 max-w-4xl mx-auto bg-gray-900/50 border border-gray-800 rounded-xl p-8">
+          <h2 className="text-2xl font-bold text-white mb-6">常见问题解答</h2>
+          <div className="space-y-6 text-sm">
+            <div>
+              <h3 className="font-semibold text-white mb-2">这些在线工具是免费的吗？</h3>
+              <p className="text-gray-400 leading-relaxed">
+                是的，网站上的所有工具都完全免费，没有任何隐藏收费，也没有次数限制。您可以无限制地使用全部功能。
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-white mb-2">我的数据会上传到服务器吗？</h3>
+              <p className="text-gray-400 leading-relaxed">
+                不会。所有工具的运算都在您的浏览器本地完成，输入内容不会上传到任何服务器，处理完成后也不会被保存，请放心使用。
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-white mb-2">工具需要安装或注册吗？</h3>
+              <p className="text-gray-400 leading-relaxed">
+                都不需要。所有工具打开即用，无需注册、无需登录、无需下载安装任何软件，在任何带浏览器的设备上都可以使用。
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-white mb-2">手机端可以使用这些工具吗？</h3>
+              <p className="text-gray-400 leading-relaxed">
+                可以。网站界面完全自适应，在手机、平板等移动设备上同样可以流畅使用所有工具，并针对触屏操作做了优化。
+              </p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-white mb-2">我想要的工具这里没有，怎么办？</h3>
+              <p className="text-gray-400 leading-relaxed">
+                我们一直在持续添加新工具。如果找不到您需要的功能，欢迎通过联系我们页面告诉我们，我们会评估并尽快上线。
+              </p>
+            </div>
+          </div>
+        </section>
         {searchQuery && (
           <p className="text-gray-400 mb-6">
             搜索「<span className="text-blue-400">{searchQuery}</span>」找到{" "}

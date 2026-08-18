@@ -173,6 +173,38 @@ const tools = [
     href: "/tools/time-difference",
     category: "实用工具",
   },
+  {
+    id: "ai-prompt-generator",
+    name: "AI 提示词生成",
+    description: "输入需求，自动生成高质量的中文 AI 提示词模板。",
+    icon: "🤖",
+    href: "/tools/ai-prompt-generator",
+    category: "AI 工具",
+  },
+  {
+    id: "text-summarizer",
+    name: "文本摘要生成",
+    description: "自动提取文章核心摘要和关键词，支持中英文。",
+    icon: "📄",
+    href: "/tools/text-summarizer",
+    category: "AI 工具",
+  },
+  {
+    id: "text-polisher",
+    name: "文本润色助手",
+    description: "自动修复错别字、精简冗余，让文案更专业规范。",
+    icon: "✍️",
+    href: "/tools/text-polisher",
+    category: "AI 工具",
+  },
+  {
+    id: "ai-translator",
+    name: "AI 翻译/改写",
+    description: "免费中英互译与文本改写，基于开源大模型。",
+    icon: "🌐",
+    href: "/tools/ai-translator",
+    category: "AI 工具",
+  },
 ];
 
 const categories = [
@@ -181,6 +213,7 @@ const categories = [
   { key: "加密/哈希", name: "🔐 加密/哈希" },
   { key: "编解码转换", name: "🔄 编解码转换" },
   { key: "文本处理", name: "🔍 文本处理" },
+  { key: "AI 工具", name: "🤖 AI 工具" },
   { key: "实用工具", name: "🧰 实用工具" },
 ];
 
@@ -322,7 +355,7 @@ export default function Home() {
           <h2 className="text-2xl font-bold text-white mb-6">免费在线工具箱，高效解决日常开发难题</h2>
           <div className="space-y-4 text-gray-400 text-sm leading-relaxed">
             <p>
-              wnsj.net 是一个免费的在线工具集合网站，收录了 JSON 格式化、XML 格式化、HTML 格式化、CSS 格式化、JavaScript 代码美化、SQL 语句格式化、Base64 编解码、URL 编解码、MD5/SHA 哈希计算、AES 加密解密、正则表达式测试、文本处理、进制转换、时间戳转换、颜色转换、二维码生成、密码生成、字数统计、在线计算器等 21 款常用工具，覆盖了开发人员和普通用户日常工作中最常遇到的场景。
+                wnsj.net 是一个免费的在线工具集合网站，收录了 JSON 格式化、XML 格式化、HTML 格式化、CSS 格式化、JavaScript 代码美化、SQL 语句格式化、Base64 编解码、URL 编解码、MD5/SHA 哈希计算、AES 加密解密、正则表达式测试、文本处理、进制转换、时间戳转换、颜色转换、二维码生成、密码生成、字数统计、在线计算器、AI 提示词生成、文本摘要、文本润色、AI 翻译改写等 25 款常用工具，覆盖了开发人员和普通用户日常工作中最常遇到的场景。
             </p>
             <p>
               与传统的桌面软件不同，我们的在线工具无需下载安装，打开浏览器即可直接使用，并支持 Windows、macOS、Linux、Android、iOS 等几乎所有主流平台。所有工具都采用浏览器本地计算的方式，您输入的数据不会离开您的设备，从根本上保障了信息隐私安全。
@@ -425,6 +458,11 @@ export default function Home() {
                 cat: "文本处理",
                 color: "from-green-500 to-emerald-500",
                 tools: tools.filter((t) => t.category === "文本处理"),
+              },
+              {
+                cat: "AI 工具",
+                color: "from-indigo-500 to-purple-500",
+                tools: tools.filter((t) => t.category === "AI 工具"),
               },
               {
                 cat: "实用工具",

@@ -10,14 +10,14 @@ export const metadata: Metadata = {
     template: "%s | 在线工具箱",
   },
   description:
-    "提供免费的在线工具集合，包括JSON格式化、加密解密、编码转换、文本处理等21款实用工具。",
+    "提供免费的在线工具集合，包括JSON格式化、加密解密、编码转换、文本处理、AI 工具等25款实用工具。",
   keywords:
-    "在线工具, JSON格式化, Base64, URL编解码, 加密解密, MD5, SHA, AES, 颜色转换, 计算器, 二维码, 正则表达式, 文本处理, 工具箱",
+    "在线工具, JSON格式化, Base64, URL编解码, 加密解密, MD5, SHA, AES, 颜色转换, 计算器, 二维码, 正则表达式, 文本处理, AI工具, AI提示词, 文本摘要, 文本润色, AI翻译, 工具箱",
   authors: [{ name: "在线工具箱" }],
   openGraph: {
     title: "在线工具箱 - 免费在线工具集合",
     description:
-      "提供免费的在线工具集合，包括JSON格式化、加密解密、编码转换、文本处理等21款实用工具。",
+      "提供免费的在线工具集合，包括JSON格式化、加密解密、编码转换、文本处理、AI 工具等25款实用工具。",
     url: "https://www.wnsj.net",
     siteName: "在线工具箱",
   },

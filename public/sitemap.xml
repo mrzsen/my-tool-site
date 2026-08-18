@@ -189,7 +189,27 @@
   </url>
   <url>
     <loc>https://www.wnsj.net/tools/sql-formatter</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-08-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/tools/ai-prompt-generator</loc>
+    <lastmod>2026-08-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/tools/text-summarizer</loc>
+    <lastmod>2026-08-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/tools/text-polisher</loc>
+    <lastmod>2026-08-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.wnsj.net/tools/ai-translator</loc>
+    <lastmod>2026-08-11</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>

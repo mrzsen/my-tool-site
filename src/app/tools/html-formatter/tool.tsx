@@ -229,6 +229,33 @@ export default function HtmlFormatterTool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">HTML（超文本标记语言）是 Web 开发的基础。无论是手写代码、模板引擎生成、还是从 CMS 系统导出的 HTML，常常会出现格式混乱、缩进不一致、标签嵌套不清晰等问题。HTML 格式化工具可以将这些混乱的代码转换为结构清晰、层次分明的格式。在现代前端工作流中，HTML 格式化是代码质量保证的重要环节。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>模板代码美化</strong>：从 CMS、邮件模板、静态站点生成器导出的 HTML 代码格式化</li>
+            <li><strong>前端代码审查</strong>：统一团队成员的 HTML 代码风格</li>
+            <li><strong>学习 HTML 结构</strong>：初学者通过格式化后的代码理解标签嵌套关系</li>
+            <li><strong>网页调试</strong>：分析从浏览器保存的 HTML 源代码结构</li>
+            <li><strong>邮件模板开发</strong>：HTML 邮件模板通常结构复杂，格式化后便于调试</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">HTML 格式化工具解析输入文本的 HTML 语法结构，识别标签、属性、文本节点、注释等元素。根据 DOM 树的层级关系计算每个元素应有的缩进级别，重新生成格式化的 HTML 代码。工具支持 HTML5 的所有标签和属性，包括自定义数据属性。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>处理包含内联样式和脚本的 HTML 时，工具会保留这些内容</li>
+            <li>格式化后的 HTML 可以直接用于生产环境</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

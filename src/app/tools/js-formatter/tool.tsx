@@ -205,6 +205,33 @@ const obj = {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">JavaScript 是现代 Web 开发的核心语言。无论是手写代码、从代码编辑器复制、还是从第三方库引入，JS 代码经常会出现格式不一致、缩进混乱等问题。JavaScript 格式化工具可以将混乱的 JS 代码转换为符合编码规范的格式。</p>
+          <p className="text-gray-700 leading-relaxed mt-4">在现代前端工程化中，代码风格一致性是质量保证的重要环节。JavaScript 格式化工具支持 ES6+ 的新语法特性，确保格式化后的代码依然符合最新的 JavaScript 规范。对于团队协作和代码审查，格式化工具能够显著提升效率和代码质量。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>代码审查准备</strong>：在提交 PR 前格式化代码，确保符合团队规范</li>
+            <li><strong>第三方代码集成</strong>：从 CDN 或 npm 包引入的压缩 JS 需要格式化后才能查看</li>
+            <li><strong>学习他人代码</strong>：阅读开源项目代码时，格式化帮助理解复杂逻辑</li>
+            <li><strong>调试辅助</strong>：格式化后的错误栈更容易定位问题</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">JavaScript 格式化工具使用 JavaScript 解析器对输入代码进行语法分析，构建抽象语法树（AST），然后根据代码结构和规范重新生成格式化的代码。工具支持 ES6+ 语法，包括箭头函数、模板字符串、解构赋值、async/await 等。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>使用「移除注释」功能前，建议先备份原始代码</li>
+            <li>对于 TypeScript 文件，建议使用专门的 TypeScript 格式化工具</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

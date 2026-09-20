@@ -297,6 +297,34 @@ export default function RegexTesterTool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">正则表达式是文本处理的强大工具，但语法复杂、易出错，编写和调试正则表达式是许多开发者的痛点。正则表达式测试器提供了一个实时交互的环境，让开发者可以输入正则模式、测试文本，并立即看到匹配结果。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>表单验证</strong>：验证邮箱、手机号、密码格式是否正确</li>
+            <li><strong>数据提取</strong>：从文本中提取特定模式的数据</li>
+            <li><strong>文本替换</strong>：批量替换匹配的文本内容</li>
+            <li><strong>日志分析</strong>：从日志文件中提取关键信息</li>
+            <li><strong>开发调试</strong>：快速测试和验证正则表达式的正确性</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">正则表达式测试器使用 JavaScript 的 RegExp 对象对输入的正则模式和测试文本进行匹配。工具支持 JavaScript 正则语法的所有特性，并提供实时匹配结果展示。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>使用捕获组提取特定部分的数据</li>
+            <li>测试时使用多种边界情况的文本，确保正则的鲁棒性</li>
+            <li>复杂的正则建议分段构建和测试</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

@@ -239,6 +239,33 @@ ORDER BY
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">SQL（结构化查询语言）是数据库操作的核心语言，但 SQL 代码常常因为不同的编写习惯而格式各异。SQL 格式化工具可以将这些风格各异的 SQL 代码转换为统一、清晰的格式。在复杂的数据分析场景中，SQL 查询可能包含多层子查询、多个 JOIN 条件、嵌套的 CASE WHEN 表达式等结构。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>复杂查询调试</strong>：多层嵌套查询经过格式化后更容易定位问题</li>
+            <li><strong>SQL 代码审查</strong>：统一团队成员的 SQL 编写风格</li>
+            <li><strong>学习 SQL</strong>：初学者通过格式化后的 SQL 理解查询结构</li>
+            <li><strong>数据库迁移</strong>：迁移过程中的 SQL 代码格式统一</li>
+            <li><strong>性能优化</strong>：格式化后的 SQL 更便于分析执行计划</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">SQL 格式化工具解析 SQL 语句的语法结构，识别 SELECT、FROM、WHERE、JOIN、GROUP BY、ORDER BY、LIMIT 等关键字和子句。根据 SQL 的逻辑层次关系计算每个子句应有的缩进级别。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>格式化后的 SQL 建议先用 EXPLAIN 分析执行计划</li>
+            <li>复杂的存储过程可能需要分段格式化</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

@@ -202,6 +202,33 @@ export default function Base64Tool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">Base64 是一种将二进制数据转换为 ASCII 字符串的编码方式，广泛应用于 Web 开发中的数据传输和存储场景。无论是将图片嵌入 CSS 或 HTML、生成 Data URL、在 URL 中传递二进制数据，还是处理电子邮件中的附件，Base64 编码都扮演着重要角色。</p>
+          <p className="text-gray-700 leading-relaxed mt-4">在现代 Web 开发中，Base64 的应用场景不断增加：从响应式图片的 Data URL 到 SVG 图标的嵌入，从 JSON Web Token (JWT) 的生成到 CSS 精灵图的 Base64 编码。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>图片嵌入</strong>：将小图片转换为 Base64 字符串嵌入 CSS 或 HTML，减少 HTTP 请求</li>
+            <li><strong>JWT 处理</strong>：查看和验证 JSON Web Token 的头部和载荷</li>
+            <li><strong>文件传输</strong>：在 URL 或表单中安全地传输二进制数据</li>
+            <li><strong>数据加密</strong>：对敏感数据进行 Base64 编码后再存储</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">Base64 编码工具将输入文本或二进制数据按照 Base64 编码规则（RFC 4648）转换为由 64 个可打印 ASCII 字符组成的字符串。编码过程将每 3 个字节（24 位）分为 4 个 6 位组，然后映射到 Base64 字符表。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>Base64 编码会使数据体积增加约 33%，不适合用于大型文件</li>
+            <li>Base64 不是加密方式，只是编码，不应用于安全敏感数据</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

@@ -207,6 +207,33 @@ export default function XmlFormatterTool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">XML（eXtensible Markup Language）是广泛使用的数据标记语言，常用于配置文件、数据交换和文档存储。XML 数据通常以压缩形式传输或存储，人眼阅读困难。XML 格式化工具可以将嵌套的 XML 结构展开为层次清晰的树形展示。在企业级应用开发中，XML 文件通常包含大量命名空间、处理指令和注释，格式化后的 XML 更易于审查和维护。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>SOAP 接口调试</strong>：SOAP 消息通常是非常复杂的 XML 结构，格式化后便于查看请求和响应</li>
+            <li><strong>Android/iOS 布局文件</strong>：XML 格式的界面布局文件经过美化后更容易定位问题</li>
+            <li><strong>RSS/Atom 源分析</strong>：查看 RSS 源的完整 XML 结构</li>
+            <li><strong>配置文件编辑</strong>：如 Spring 配置、AndroidManifest.xml 等 XML 配置文件的美化</li>
+            <li><strong>SVG 图形编辑</strong>：查看和调试 SVG 矢量图形的 XML 代码</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">XML 格式化工具通过分析 XML 文档的标签嵌套结构，根据标签的层级关系自动计算缩进量。工具识别开始标签、结束标签、自闭合标签、文本节点、注释节点等不同类型的 XML 节点，然后按照 DOM 树的层级关系生成带有正确缩进的格式化代码。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>处理包含命名空间的 XML 时，格式化工具会保留命名空间前缀</li>
+            <li>格式化后的 XML 可以直接用于代码编辑器进行进一步编辑</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

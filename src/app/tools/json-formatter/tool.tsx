@@ -229,6 +229,35 @@ export default function JsonFormatterTool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">JSON（JavaScript Object Notation）已经成为现代 Web 开发中最常用的数据交换格式。无论是前后端接口通信、配置文件、API 响应还是日志记录，几乎每个开发场景都离不开 JSON。然而，原始的 JSON 数据往往格式混乱、结构不清晰，尤其是在处理来自第三方 API 的嵌套数据时，人眼很难快速定位关键字段。</p>
+          <p className="text-gray-700 leading-relaxed mt-4">使用 JSON 格式化工具可以立即将压缩的、单行的 JSON 数据转换为结构清晰、层级分明的树形结构，让开发者能够一目了然地看到数据的完整结构。这不仅提高了调试效率，还减少了因为格式问题导致的错误。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>API 调试</strong>：调用接口后返回的 JSON 数据通常是一行压缩文本，使用格式化工具可以快速查看数据结构</li>
+            <li><strong>配置文件管理</strong>：大型 JSON 配置文件经过格式化后更容易定位需要修改的字段</li>
+            <li><strong>学习与教学</strong>：初学者通过格式化后的 JSON 直观理解数据结构</li>
+            <li><strong>数据迁移</strong>：在数据格式转换过程中，格式化后的 JSON 便于对比和验证</li>
+            <li><strong>代码审查</strong>：团队协作中，格式统一的 JSON 代码更易于审查和维护</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">JSON 格式化工具基于浏览器端的 JavaScript 解析引擎工作。当用户点击「格式化」按钮时，工具首先使用 JSON.parse() 对输入文本进行语法解析，如果成功，则通过 JSON.stringify() 方法将解析后的对象重新序列化为带有指定缩进格式的字符串。压缩功能通过将缩进参数设置为 0 来实现，整个过程完全在本地浏览器中运行。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>处理大型 JSON 文件时，可以先复制文件内容到输入框，利用实时校验功能快速定位语法错误</li>
+            <li>使用「压缩」功能前，建议先复制原始格式化版本到本地备份</li>
+            <li>如果经常需要格式化特定格式的 JSON，可以将模板保存到书签中方便复用</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

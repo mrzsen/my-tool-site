@@ -185,6 +185,34 @@ export default function PasswordGeneratorTool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">密码安全是数字身份保护的基础，而弱密码是账户被盗的最常见原因。一个强密码应该具备足够的长度、字符多样性和不可预测性。手动创建密码往往容易陷入常见模式（如包含生日、姓名、连续字符等），而密码生成器可以快速生成真正随机、安全的密码。</p>
+          <p className="text-gray-700 leading-relaxed mt-4">现代最佳实践是每个账户使用不同的、由密码生成器创建的唯一强密码。我们的工具帮助开发者快速创建安全的随机密码，是账户安全管理的第一步。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>新账户注册</strong>：创建账户时生成安全密码</li>
+            <li><strong>密码重置</strong>：为用户生成临时安全密码</li>
+            <li><strong>测试环境</strong>：生成测试用的随机密码数据</li>
+            <li><strong>批量生成</strong>：为多个账户生成不同的密码</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">密码生成器使用浏览器的加密安全随机数生成器（Crypto.getRandomValues()），从指定的字符集中随机选取字符，组合成指定长度的密码。用户可以选择包含的字符类型和密码长度。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>密码长度建议 16 位以上，字符类型包含大小写字母、数字和特殊符号</li>
+            <li>生成后建议使用密码管理器妥善保存</li>
+            <li>不同账户使用不同的密码，避免复用</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

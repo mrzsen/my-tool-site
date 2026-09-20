@@ -200,6 +200,33 @@ export default function UrlEncodeDecodeTool() {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">URL 编码（也称为百分号编码）是 Web 中处理特殊字符的标准方式。当 URL 中包含中文、空格、特殊符号等字符时，必须进行 URL 编码才能被浏览器和服务器正确解析。在前端开发中，URL 编解码的正确使用直接关系到数据的完整性和用户体验。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>API 参数构建</strong>：将中文或特殊字符作为 API 参数进行编码</li>
+            <li><strong>表单提交</strong>：URL 中传递表单数据时进行编码</li>
+            <li><strong>分享链接生成</strong>：生成包含特殊字符的可分享 URL</li>
+            <li><strong>SEO 优化</strong>：确保 URL 中的中文字符正确编码</li>
+            <li><strong>数据解析</strong>：从 URL 参数中解码获取的编码数据</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">URL 编码工具使用标准的 URL 编码规则，将特殊字符转换为 %XX 形式的十六进制编码。编码过程遍历输入字符串的每个字符，对非字母数字字符、空格和中文字符进行百分号编码。解码过程是编码的逆操作。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>在 URL 路径中使用编码时，注意不要对分隔符编码</li>
+            <li>编码后的 URL 可能变长，注意服务器对 URL 长度的限制</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

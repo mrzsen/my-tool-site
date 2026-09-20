@@ -186,6 +186,35 @@ export default function EncryptHashTool() {
           </div>
         </section>
       </div>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">加密和哈希是数据安全的核心领域。随着网络安全威胁的不断增加，数据加密和完整性校验已成为开发者和普通用户必备的技能。我们的加密/哈希工具集成了 MD5、SHA 系列和 AES 加密等多种算法，帮助您快速完成各种加密和哈希操作，保护数据安全。</p>
+          <p className="text-gray-700 leading-relaxed mt-4">无论您是需要验证文件的完整性（使用 MD5 或 SHA），还是需要保护敏感数据的安全（使用 AES 加密），我们的工具都能在一个页面上满足您的所有需求。工具完全在浏览器本地运行，确保您的数据不会离开您的设备。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>文件完整性校验</strong>：使用 MD5 或 SHA 哈希验证文件是否被篡改</li>
+            <li><strong>敏感数据加密</strong>：使用 AES 加密保护机密信息</li>
+            <li><strong>密码安全</strong>：生成密码的哈希值进行存储</li>
+            <li><strong>数据签名</strong>：使用 SHA 生成数据摘要用于签名验证</li>
+            <li><strong>安全审计</strong>：检查系统的加密能力和数据完整性</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">加密/哈希工具集成了多种密码学算法。MD5 和 SHA 哈希工具使用单向哈希函数将输入转换为固定长度的摘要。AES 加密工具使用对称加密算法，通过相同的密钥进行加密和解密。所有运算均在浏览器本地完成，不涉及任何网络请求。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>MD5 和 SHA 仅用于数据校验，不应用于密码存储</li>
+            <li>AES 加密时，请确保密钥安全存储，切勿泄露</li>
+            <li>对于相同输入，哈希值始终一致（确定性）</li>
+          </ul>
+        </section>
+
     </div>
   );
 }

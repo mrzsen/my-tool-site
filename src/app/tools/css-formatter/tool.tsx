@@ -205,6 +205,33 @@ body {
             </div>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">为什么这个工具如此重要？</h2>
+          <p className="text-gray-700 leading-relaxed">CSS（层叠样式表）是 Web 设计中不可或缺的一部分，但 CSS 代码常常因为压缩、手动编写或从框架导出而格式混乱。CSS 格式化工具可以将压缩的 CSS 代码展开为清晰易读的格式。随着 CSS 特性的不断扩展（Grid 布局、Flexbox、CSS 变量、响应式设计等），CSS 代码的复杂度也在增加。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">典型应用场景</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li><strong>第三方 CSS 集成</strong>：从 CDN 引入的压缩 CSS 需要格式化后才能查看和修改</li>
+            <li><strong>样式表审查</strong>：检查选择器优先级、识别冗余样式</li>
+            <li><strong>CSS 变量管理</strong>：查看和编辑 CSS 自定义属性</li>
+            <li><strong>响应式代码调试</strong>：理解复杂的媒体查询嵌套结构</li>
+            <li><strong>团队协作</strong>：统一团队成员的 CSS 代码风格</li>
+          </ul>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">工作原理</h2>
+          <p className="text-gray-700 leading-relaxed">CSS 格式化工具解析 CSS 语法结构，识别选择器、属性、值、注释、@media 规则等元素。根据 CSS 的嵌套层级关系计算缩进级别，生成格式化的 CSS 代码。</p>
+        </section>
+        <section>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">实用技巧</h2>
+          <ul className="list-disc list-inside space-y-2 text-gray-700">
+            <li>格式化后仔细检查选择器优先级，确保样式按预期应用</li>
+            <li>使用「压缩」功能生成生产环境的 CSS，减少文件体积</li>
+          </ul>
+        </section>
+
       </div>
 
 </div>

@@ -3,15 +3,25 @@
 /**
  * Generate AI article from RSS feeds and create a blog post.
  * Runs in GitHub Actions daily to fetch AI news and publish rewritten articles.
+ * Uses RSSHub for reliable RSS feeds.
  */
 
+// RSS sources using RSSHub proxy for reliability
 const RSS_FEEDS = [
-  "https://openai.com/blog/feed/",
-  "https://huggingface.co/blog/feed",
-  "https://blog.google/technology/ai/feed/",
-  "https://blog.deepmind.com/feed",
-  "https://www.theverge.com/ai-artificial-intelligence/feed",
-  "https://venturebeat.com/ai/feed/",
+  // OpenAI blog via RSSHub
+  "https://rsshub.app/openai/blog",
+  // HuggingFace blog via RSSHub
+  "https://rsshub.app/huggingface/blog",
+  // Google AI blog via RSSHub
+  "https://rsshub.app/google/tech-ai",
+  // TechCrunch AI
+  "https://rsshub.app/techcrunch/ai",
+  // The Verge AI
+  "https://rsshub.app/theverge/ai-artificial-intelligence",
+  // MIT Technology Review AI
+  "https://rsshub.app/mitreview/ai",
+  // Wired AI
+  "https://rsshub.app/wired/tag/artificial-intelligence",
 ];
 
 const BLOG_DIR = "src/app/blog";
@@ -33,17 +43,6 @@ function sanitizeSlug(title) {
     .substring(0, 60);
 }
 
-async function fetchRSS(url) {
-  try {
-    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) return null;
-    const text = await res.text();
-    return parseRSS(text);
-  } catch {
-    return null;
-  }
-}
-
 function parseRSS(xmlText) {
   const items = [];
   const itemRegex = /<item>([\s\S]*?)<\/item>/gi;
@@ -59,7 +58,9 @@ function parseRSS(xmlText) {
     const contentSnippet =
       item.match(
         /<content:encoded>([\s\S]*?)<\/content:encoded>/i
-      )?.[1]?.trim() ?? description;
+      )?.[1]?.trim() ??
+      item.match(/<description>([\s\S]*?)<\/description>/i)?.[1]?.trim() ??
+      "";
 
     if (title) {
       items.push({ title, link, pubDate, description, contentSnippet });
@@ -68,32 +69,65 @@ function parseRSS(xmlText) {
   return items;
 }
 
+async function fetchRSS(url) {
+  try {
+    const res = await fetch(url, { signal: AbortSignal.timeout(15000) });
+    if (!res.ok) return null;
+    const text = await res.text();
+    const items = parseRSS(text);
+    return items.length > 0 ? items : null;
+  } catch {
+    return null;
+  }
+}
+
 async function fetchAndSelectArticle() {
   const allArticles = [];
+
   for (const feed of RSS_FEEDS) {
     const items = await fetchRSS(feed);
     if (items) {
       allArticles.push(...items);
     }
-    await new Promise((r) => setTimeout(r, 500));
+    // Small delay between requests
+    await new Promise((r) => setTimeout(r, 300));
+  }
+
+  if (allArticles.length === 0) {
+    console.log("No articles found from any RSS feed");
+    return null;
   }
 
   // Filter for AI-related articles
-  const aiKeywords = ["ai", "artificial intelligence", "machine learning", "llm", "gpt", "deep learning", "neural", "transformer", "generative", "nlp"];
+  const aiKeywords = [
+    "ai",
+    "artificial intelligence",
+    "machine learning",
+    "llm",
+    "gpt",
+    "deep learning",
+    "neural",
+    "transformer",
+    "generative",
+    "nlp",
+    "chatgpt",
+    "openai",
+    "anthropic",
+    "gemini",
+    "claude",
+  ];
+
   const aiArticles = allArticles.filter(
     (a) =>
       aiKeywords.some((kw) => a.title.toLowerCase().includes(kw)) ||
       aiKeywords.some((kw) => a.description.toLowerCase().includes(kw))
   );
 
-  if (aiArticles.length === 0) {
-    // Fall back to all articles, sort by date
-    return allArticles[0] ?? null;
-  }
+  // Sort by date descending
+  const sorted = aiArticles.length > 0 ? aiArticles : allArticles;
+  sorted.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-  // Sort by pubDate descending, return most recent
-  aiArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-  return aiArticles[0];
+  return sorted[0];
 }
 
 async function rewriteArticle(article) {
@@ -110,12 +144,13 @@ async function rewriteArticle(article) {
 3. 语言流畅自然，符合中文技术博客风格
 4. 适当加入原创分析和见解
 5. 字数要求800-1200字
+6. 不要输出任何前缀、说明或额外文字，直接输出正文
 
 原文标题：${article.title}
 原文摘要：${article.description}
 原文链接：${article.link}
 
-请直接输出完整的中文博客文章内容，不要加任何前缀或说明。`;
+请直接输出完整的中文博客文章内容。`;
 
   try {
     const res = await fetch(
@@ -150,7 +185,7 @@ async function rewriteArticle(article) {
         ? data[0].generated_text
         : data?.generated_text ?? null;
 
-    if (!content) {
+    if (!content || content.length < 100) {
       return generateFromTemplate(article);
     }
 
@@ -190,19 +225,20 @@ function createBlogPost(articleData) {
   const slug = articleData.slug || sanitizeSlug(articleData.title);
   const date = articleData.date || new Date().toISOString().split("T")[0];
   const category = articleData.category || randomFrom(CATEGORIES);
-  const title = articleData.title;
+  const title = articleData.title.replace(/"/g, "");
   const content = articleData.content;
+  const description = (articleData.description || title).replace(/"/g, "");
 
   const postContent = `import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "${title} - 在线工具箱",
-  description: "${title.replace(/"/g, "")} - 技术前沿资讯与深度解析。",
+  description: "${description} - 技术前沿资讯与深度解析。",
   alternates: { canonical: "./" },
   openGraph: {
     title: "${title} - 在线工具箱",
-    description: "${title.replace(/"/g, "")} - 技术前沿资讯与深度解析。",
+    description: "${description} - 技术前沿资讯与深度解析。",
   },
 };
 
@@ -221,7 +257,7 @@ export default function BlogPost() {
             ${title}
           </h1>
           <p className="text-gray-600 text-lg leading-relaxed">
-            ${articleData.description || title}
+            ${description}
           </p>
         </header>
 
@@ -238,32 +274,27 @@ export default function BlogPost() {
 }
 `;
 
-  const postDir = `${BLOG_DIR}/${slug}`;
-  const postPath = `${postDir}/page.tsx`;
-  return { postPath, postContent, slug, title, date, category };
+  const postPath = `${BLOG_DIR}/${slug}/page.tsx`;
+  return { postPath, postContent, slug, title, date, category, description };
 }
 
 function updateBlogPage(newPost) {
-  // Read existing blog page
   const fs = require("fs");
-  const path = require("path");
   const blogPagePath = BLOG_PAGE;
 
   if (!fs.existsSync(blogPagePath)) return;
 
   let blogContent = fs.readFileSync(blogPagePath, "utf-8");
 
-  // Add new post to the beginning of the posts array
   const newPostEntry = `  {
     slug: "${newPost.slug}",
     title: "${newPost.title}",
-    excerpt: "${newPost.description || newPost.title}",
+    excerpt: "${newPost.description}",
     date: "${newPost.date}",
     category: "${newPost.category}",
     readTime: "5分钟",
   },`;
 
-  // Find the posts array and insert the new post
   const postsStart = blogContent.indexOf("const posts: Post[] = [");
   if (postsStart !== -1) {
     const insertPos = blogContent.indexOf("[", postsStart) + 1;
@@ -274,7 +305,6 @@ function updateBlogPage(newPost) {
       "\n" +
       blogContent.slice(insertPos);
 
-    // Update the description text
     blogContent = blogContent.replace(
       /分享实用的工具使用技巧、技术教程和行业资讯/,
       "分享前沿AI技术资讯、深度技术解析和实用开发技巧"
@@ -295,6 +325,7 @@ async function main() {
     process.exit(1);
   }
   console.log(`Selected article: ${article.title}`);
+  console.log(`Source: ${article.link}`);
 
   // Step 2: Rewrite article
   const rewritten = await rewriteArticle(article);
@@ -303,21 +334,20 @@ async function main() {
   // Step 3: Create blog post
   const post = createBlogPost({
     ...rewritten,
-    description: article.description,
+    description: article.description || article.title,
     slug: sanitizeSlug(article.title),
   });
 
   // Check if post already exists
   const fs = require("fs");
-  const path = require("path");
   if (fs.existsSync(post.postPath)) {
     console.log("Article already exists, skipping");
     process.exit(0);
   }
 
   // Create directory and write file
-  const dir = path.dirname(post.postPath);
-  fs.mkdirSync(dir, { recursive: true });
+  const dirPath = require("path").dirname(post.postPath);
+  fs.mkdirSync(dirPath, { recursive: true });
   fs.writeFileSync(post.postPath, post.postContent, "utf-8");
   console.log(`Created blog post: ${post.postPath}`);
 
